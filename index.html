@@ -1,196 +1,277 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://blog.hegra.top/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.hegra.top/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-12-15 23:56:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/12/15/hello-world/" class="article-date">
-  <time datetime="2022-12-14T18:51:21.210Z" itemprop="datePublished">2022-12-15</time>
-</a>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/15/%E4%B8%89%E7%A7%8DJAVA%E5%B8%B8%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC(Reverse)%E7%9A%84%E6%96%B9%E6%B3%95/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E4%B8%89%E7%A7%8DJAVA%E5%B8%B8%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC(Reverse)%E7%9A%84%E6%96%B9%E6%B3%95/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.339Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">三种JAVA常用实现字符串反转(Reverse)的方法1.最简单的方法：
+public static String reverse1(String str){return new StringBuffer(str).reverse().toString();}
+SringBuffer类和String一样，也用来代表字符串，相比String, StringBuffer在进行字符串处理时，不生成新的对象，在内存使用上要优于String类。当遇到插入、删除等字符串操作时，可以考虑用StringBuffer。
+StringBuffer初始化：
+使用构造方法对StringBuffer初始化：
+​    StringBuffer s = new StringBuffer(); //初始化出的StringBuffer对象是一个空的对象
+​    StringBuffer s = new StringBuffer(“abc”); //初始化出的StringBuffer对象的内容就是字符串”abc”
+StringBuffer与String的转换：
+虽然StringBuffer和String都是操作字符串 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/15/%E6%8B%BC%E6%95%B0%E9%97%AE%E9%A2%98/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E6%8B%BC%E6%95%B0%E9%97%AE%E9%A2%98/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.331Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">链接：https://ac.nowcoder.com/acm/contest/19850/D来源：牛客网
+题目描述设有n个正整数（n ≤ 20），将它们联接成一排，组成一个最大的多位整数。 例如：n=3时，3个整数13，312，343联接成的最大整数为：34331213 又如：n=4时，4个整数7，13，4，246联接成的最大整数为：7424613
+输入描述:12第一行，一个正整数n。第二行，n个正整数。
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+输出描述:1一个正整数，表示最大的整数
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+12345678910111213141516171819202122public static void main(String[] args) &#123;       Scanner sc=new Scanner(System.in);       int n=sc.nextInt();       sc.nextLine();       //把输入的多个值，看成是字符串数组       String[] strs=sc.nextLine().split(&quot; &quot;);       for (int i = 0; i ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A5%87%E8%91%A9%E7%AE%97%E6%B3%95%E9%A2%98/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A5%87%E8%91%A9%E7%AE%97%E6%B3%95%E9%A2%98/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.324Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">链接：https://ac.nowcoder.com/acm/contest/19850/E来源：牛客网
+牛牛喜欢跟字符串玩耍，他刚刚学会了一个新操作，将一个字符串x插入另一个字符串y中（包括放在开头和结尾） 牛牛认为如果一个串是好的当这个串能按照如下方法被构造出来： 一开始，有一个空串，然后执行0次或者若干次操作，每次操作将ab插入当前的字符串
+ 根据上面的定义，ab, aabb, aababb都是好串，aab,ba,abbb并不是好串
+ 现在给你一个字符串s，判断s是否是好串
+输入描述:1输入一行包含一个字符串,长度不超过50
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/15/hello-world/" data-id="clbohy9xh0000fknkdmpz0cll" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/15/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+输出描述:1输出&quot;Good&quot; 或者 &quot;Bad&quot;
 
 
 
+上下思路一致，但是上面只通过了用例40%,下面AC…
+12345678910111213141516171819202122import java.util.*;public class Main &#123;        public static void main(String[] args) &#123;        Scanner sc=new Sc ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/15/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%B8%8EDFS%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A%E5%9B%9E%E6%BA%AF%E4%BB%85%E4%BB%85%E6%98%AFDFS+%E5%89%AA%E6%9E%9D%E5%90%97%EF%BC%9F/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%B8%8EDFS%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A%E5%9B%9E%E6%BA%AF%E4%BB%85%E4%BB%85%E6%98%AFDFS+%E5%89%AA%E6%9E%9D%E5%90%97%EF%BC%9F/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.316Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">回溯算法与DFS的区别：回溯仅仅是DFS+剪枝吗？提出这个问题，说明对《数据结构》有一定的学习基础，也在涉猎《算法分析与设计》。
 
-<script src="/js/script.js"></script>
+DFS
+
+DFS 英文名，Depth First Search，中文名 深度优先搜索，是图的一种搜索算法，每一个可能的分支路径深入到不能再深入为止，且每个节点只能访问一次。
+深度优先搜索算法跟图结构紧密相关，任何涉及深度度优先搜索的问题，都伴随着图。
+深度度优先搜索的能够在图结构里搜索到通往特定终点的一条或者多条特定路径。
+
+回溯
+
+回溯算法是系统地搜索问题的解的方法。
+某个问题的所有可能解的称为问题的解空间，若解空间是有限的，则可将解空间映射成树结构。
+任何解空间可以映射成树结构的问题，都可以使用回溯法。
+回溯法是能够在树结构里搜索到通往特定终点的一条或者多条特定路径。
+回溯算法的基本思想是：从一条路往前走，能进则进，不能进则退回来，换一条路再试，从而搜索到抵达特定终点的一条或者多条特定路径。
+值得注意，回溯法以深度优先搜索的方式搜索解空间，并且在搜索过程中用**剪枝函数**避免无效搜索。
+
+总结
+
+因此，回溯算法 = 深度优先搜索 + 剪枝函数 这一说 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/15/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A7%88/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A7%88/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.308Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">项目概览项目用的b2c模式,有前台管理系统和后台管理系统
+后台系统的功能
+登录功能(集成SpringSecurity框架)
+权限管理模块(1) 菜单管理:列表,添加,修改,删除
+(2) 角色管理:列表,添加,修改,删除,为角色分配菜单
+(3) 用户管理:列表,添加,修改,删除,为用户分配角色
+(4) 权限管理表的关系
+
+讲师管理模块(1) 条件查询分页列表,添加,修改,删除
+
+课程分类模块(1)添加课程分类 (读取Excel中里面课程分类数据,添加到数据库中)
+(2)课程分类列表显示(使用树形结构实现课程分类列表)
+
+课程管理模块(1)添加课程
+
+第一步 填写课程基本信息
+第二步 添加课程大纲(章节和小节)
+第三步 课程信息确认,最终课程发布
+
+(2)课程列表(条件查询分页列表,增删改查已发布和未发布课程)
+(3)添加小节上传课程视频
+
+轮播图管理
+订单管理(有待补充)
+
+前台系统的功能
+首页数据显示(redis缓存)(1) 显示幻灯片功能
+(2) 显示热门课程
+(3) 显示名师
+
+注册功能(1) 填写基本信息(加密密码)
+(2) 获取手机验证码(阿里云短信服务)
+
+登录功能(1) 手 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/15/%E5%B2%9B%E5%B1%BF%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/%E5%B2%9B%E5%B1%BF%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.302Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">给你一个大小为 m x n 的二进制矩阵 grid 。
+岛屿 是由一些相邻的 1 (代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在 水平或者竖直的四个方向上 相邻。你可以假设 grid 的四个边缘都被 0（代表水）包围着。
+岛屿的面积是岛上值为 1 的单元格的数目。
+计算并返回 grid 中最大的岛屿面积。如果没有岛屿，则返回面积为 0 。
+示例 1：
+
+123输入：grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]输出：6解释：答案不应该是 11 ，因为岛屿只能包含水平或垂直这四个方向上的 1 。
+
+示例 2：
+12输入：grid = [[0,0,0,0,0,0,0 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/15/UML%E5%BB%BA%E6%A8%A1/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/UML%E5%BB%BA%E6%A8%A1/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.294Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">第一章 面向对象技术概述软件危机和软件工程控制软件系统复杂性的基本方法:(1)分解对于复杂的软件系统, 可以逐步将它分解成越来越小的组成部分, 直到不能再分解. 如Unix中的shell和管道就采用了分解思想.
+(2) 抽象当我们用抽象这个概念时, 我们承认正在考虑的问题是复杂的, 但我们并不打算理解问题的全部, 而只是选择解决其中的主要部分, 不去注意那些细节而已.
+抽象又分为过程抽象和数据抽象(数据类型)
+在面向对象兴起之前, 编程以过程为中心, 例如结构化设计方法. 然而, 系统已经达到了超越其处理能力的复杂性极点. 有了对象, 我们能够提升抽象级别来构建更大的, 更复杂的系统.
+(3) 模块化高内聚, 低耦合. 高内聚指的是在一个模块中应尽量多地汇集逻辑上相关的计算资源; 低耦合指的模块之间的相互作用尽可能地少
+(4)信息隐蔽信息隐蔽也称封装, 把模块内的实现细节与外界隔离, 用户只需知道模块的功能, 而不需要了解模块内部细节.
+在结构化方法中, 现实世界被映射为功能的集合. 在面向对象方法中, 现实中的实体及其相互关系被映射为对象及对象之间的关系.
+对象和实例对象(objec ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/15/SQL%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/SQL%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.281Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">DDL定义数据库的结构（增删改查创建数据库：create database [if not exists] 库名 [character set 字符集名];修改库：alter database 库名 character set 字符集名;删除库：drop database [if exists] 库名;相关其他命令，这个一般用于命令行中：
+
+show databases;查看当前所有数据库
+use employees;“使用”一个数据库，使其作为当前数据库
+
+
+创建表：
+
+/*create table 【if not exists】 表名(                                   字段名 字段类型 【约束】,                                   字段名 字段类型 【约束】,                                   。。。                                   字段名 字段类型 【约束】)
+
+
+CREATE TABLE dept(                      ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/15/PO%E3%80%81DTO%E3%80%81BO%E3%80%81VO%E7%9A%84%E7%AE%80%E4%BB%8B/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/PO%E3%80%81DTO%E3%80%81BO%E3%80%81VO%E7%9A%84%E7%AE%80%E4%BB%8B/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.272Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">简介
+PO （Persistant Object）：此对象与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
+DTO（Data Transfer Object）：数据传输对象，Service 或 Manager 向外传输的对象。
+BO（Business Object）：业务对象，可以由 Service 层输出的封装业务逻辑的对象。
+VO（View Object）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
+POJO （Plain Ordinary Java Object）是 PO/DTO/BO/VO 的统称
 
 
 
+PO 持久层对象与数据库的表、视图、或者是查询结果的列一一对应。PO仅用来展现数据，类中只包含属性和get/set方法，而不会有修改数据库的方法。
+DAO 层的返回和多参数的接收都是用的PO对象封装。
+DTO 数据传输对象DTO最早由EJB的设计模式引入，主要是为了解决两个问题：
 
-  </div>
-</body>
-</html>
+可以在不同的web服务间传输，因此需要可以序列化，实现serializable接口。
+把相关的数据都组合到一个对象中，减少网络调用的次数，从而提高分布式调用的性能和降低网络 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/12/15/lambd%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/15/lambd%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-12-15T10:03:01.254Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></span></div><div class="content">匿名内部类的格式：123new 父类或接口() &#123;    重写的方法; &#125;
+
+在匿名内部类中，有很多内容都是冗余的。比如在使用匿名内部类实现多线程的代码中。
+
+ 因为 Thread 构造方法中需要传递 Runnable 接口类型的参数，所以我们不得不 new Runnable。
+ 因为要重写 Runnable 中的 run 方法，所以不得不写了public void run。
+
+整个匿名内部类中最关键的东西是方法，方法中最关键的有前中后三点。
+
+ 前：参数。
+ 中：方法体
+ 后：返回值
+
+最好的情况是只关注匿名内部类中最核心的这些内容（方法参数，方法体，返回值）如果使用Lambda表达式，可以只关注最核心的内容，Lambda 表达式是匿名内部类的简化写法。
+Lambda 属于函数式编程思想。
+
+ 面向对象思想：怎么做。
+ 函数式编程思想：做什么。
+
+1234567891011121314public class Demo01Inner &#123;    public static void main(String[] args) &#123;        //使 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/15/%E4%B8%89%E7%A7%8DJAVA%E5%B8%B8%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC(Reverse)%E7%9A%84%E6%96%B9%E6%B3%95/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/12/15/%E4%B8%89%E7%A7%8DJAVA%E5%B8%B8%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC(Reverse)%E7%9A%84%E6%96%B9%E6%B3%95/" title="No title">No title</a><time datetime="2022-12-15T10:03:01.339Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/15/%E6%8B%BC%E6%95%B0%E9%97%AE%E9%A2%98/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/12/15/%E6%8B%BC%E6%95%B0%E9%97%AE%E9%A2%98/" title="No title">No title</a><time datetime="2022-12-15T10:03:01.331Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A5%87%E8%91%A9%E7%AE%97%E6%B3%95%E9%A2%98/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/12/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A5%87%E8%91%A9%E7%AE%97%E6%B3%95%E9%A2%98/" title="No title">No title</a><time datetime="2022-12-15T10:03:01.324Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/15/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%B8%8EDFS%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A%E5%9B%9E%E6%BA%AF%E4%BB%85%E4%BB%85%E6%98%AFDFS+%E5%89%AA%E6%9E%9D%E5%90%97%EF%BC%9F/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/12/15/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%B8%8EDFS%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A%E5%9B%9E%E6%BA%AF%E4%BB%85%E4%BB%85%E6%98%AFDFS+%E5%89%AA%E6%9E%9D%E5%90%97%EF%BC%9F/" title="No title">No title</a><time datetime="2022-12-15T10:03:01.316Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/15/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A7%88/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/12/15/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A7%88/" title="No title">No title</a><time datetime="2022-12-15T10:03:01.308Z" title="Created 2022-12-15 18:03:01">2022-12-15</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">December 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">November 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-12-15T15:56:39.605Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
