@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="稍微讲一下java gui的历史吧，java的gui的延伸其实还包括了安卓以及谷歌做的那些努力 java最早的图形控件就是awt，这个没问题，但是awt做的事很少，基本上只是做一点简单的包装，所以如果你用的是awt的话，你可能会有比较多的工作要做，比如你想做动画，用awt就会遇到屏幕闪烁的问题，所以你要去弄离屏表面，然后渲染完之后再flip过去，这个属于极为低端的技术，awt这种低层次的封装你就必">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://blog.hegra.top/2023/03/02/Java%20GUI%E7%9A%84%E5%8E%86%E5%8F%B2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="稍微讲一下java gui的历史吧，java的gui的延伸其实还包括了安卓以及谷歌做的那些努力 java最早的图形控件就是awt，这个没问题，但是awt做的事很少，基本上只是做一点简单的包装，所以如果你用的是awt的话，你可能会有比较多的工作要做，比如你想做动画，用awt就会遇到屏幕闪烁的问题，所以你要去弄离屏表面，然后渲染完之后再flip过去，这个属于极为低端的技术，awt这种低层次的封装你就必">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-03-02T15:40:21.861Z">
+<meta property="article:modified_time" content="2023-02-26T13:28:40.631Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.hegra.top/2023/03/02/Java%20GUI%E7%9A%84%E5%8E%86%E5%8F%B2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-26 21:28:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-02T15:40:21.861Z" title="Created 2023-03-02 23:40:21">2023-03-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-02-26T13:28:40.631Z" title="Updated 2023-02-26 21:28:40">2023-02-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>稍微讲一下java gui的历史吧，java的gui的延伸其实还包括了安卓以及谷歌做的那些努力</p>
+<p>java最早的图形控件就是awt，这个没问题，但是awt做的事很少，基本上只是做一点简单的包装，所以如果你用的是awt的话，你可能会有比较多的工作要做，比如你想做动画，用awt就会遇到屏幕闪烁的问题，所以你要去弄离屏表面，然后渲染完之后再flip过去，这个属于极为低端的技术，awt这种低层次的封装你就必需要用这种手段，开发很慢，其实你用c之类的，估计还能遇到这种问题</p>
+<p>这是第一个阶段</p>
+<hr>
+<p>那后来就出现了一个发展，sun当时发展出了swing，但是这时候爆发了一个巨大的导致分裂的冲突，那就是ibm当时提出了使用swt，而sun提出了swing，swt代表着native widget的分支和走向，而swing则代表了emulate widget的分支和走向</p>
+<p>这两者的区别呢，我这里简单说一下，[native widget](<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=native">https://www.zhihu.com/search?q=native</a> widget&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={“sourceType”%3A”answer”%2C”sourceId”%3A811401387})的做法主张，更多地复用操作系统本身的控件和样式，举个例子，比如windows提供了图形库<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=directx3d&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">directx3d</a>，macosx提供了图形库是metal，标准则是opengl和<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=vulkan&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">vulkan</a>，那么swt一派就认为，我们应该提供一个统一的api，然后这个api在实现的时候，根据操作系统的差异，自动选择不同的图形库予以使用，这样这个api就是一层[thin wrapper](<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=thin">https://www.zhihu.com/search?q=thin</a> wrapper&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={“sourceType”%3A”answer”%2C”sourceId”%3A811401387})，这样做的好处就是，你可以很快滴利用上操作系统提供的各种图形库，比如win上就用directx，mac上就用metal，etc.还有窗口的样式等，但是坏处就是，你在不同的操作系统上，看到的样式什么的，会有差异，比如swt在它网站上给出的几个例子就很好滴说明这一点，不同操作系统上的展示有明显的不同，如下图：</p>
+<p><img src="https://picx.zhimg.com/80/v2-86bb07c08077b434130f53081b9cbf86_720w.webp?source=1940ef5c" alt="img"></p>
+<p>同样的窗口在不同操作系统上的展示，很明显可以看出很多差异来</p>
+<p>那<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=swing&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">swing</a>则表示，这个太不跨平台了，java应该编译一次，然后到处运行，而且到处运行时候看起来应该是一样的，彻底屏蔽操作系统带来的差异，应该做一层[thick wrapper](<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=thick">https://www.zhihu.com/search?q=thick</a> wrapper&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={“sourceType”%3A”answer”%2C”sourceId”%3A811401387})，厚包装，那这样做的坏处有几个，第一个就是不同操作系统的图形库不一样，那强行一致的结果就是，只能用最弱鸡的那个去搞了，当时标准是opengl，那就是opengl了，在win上也用不了directx，而且不是所有的操作系统都有这么高级的渲染工具的，所以swing还缺省提供了一个没有硬件加速，纯软件渲染的界面，而且更要命的是，缺省是不开硬件加速的，所以这就导致swing做出来的时候，慢，因为没开硬件加速，哪怕你的显卡支持你能用硬件加速渲染，它还是缺省会用纯软件渲染，然后你要懂怎么开硬件加速才能实现你想要的效果，就像很多人可能至今都不知道idea的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=vmoption&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">vmoption</a>其实是可以开硬件加速的吧？在help里面，选择vmoption，然后添加上这一行：-Dsun.java2d.opengl=true，以启动硬件加速</p>
+<p>参考：<a href="https://link.zhihu.com/?target=https://stackoverflow.com/questions/4627320/java-hardware-acceleration">https://stackoverflow.com/questions/4627320/java-hardware-acceleration</a></p>
+<p>而且还很要命的一点，swing的组长似乎对于gui好看不好看没有什么概念，缺省用的是unix那一套gui，就是几十年前的那种gui，这里贴出苹果早期的gui，macos也是freebsd的变种，都是unix的一员，所以早期版本的gui还保留了比较多unix原始的形态，看看就能感觉出来跟swing那个是不是很像了，看拖动条的紫色，几乎一摸一样</p>
+<p><img src="https://pic1.zhimg.com/80/v2-4c3565397b70626cf6d557efc2db0a41_720w.webp?source=1940ef5c" alt="img"></p>
+<p>unix gui</p>
+<p>早期机能所限，能做成这样已经很好了，但是进入90年代之后，还在画这种窗口，那就只能给人感觉原始了</p>
+<p>这是第二个阶段，这个阶段的过程就是swing和swt两边吵翻天，内讧，最后java在gui上大败，铩羽而归，因为swing缺省的界面丑，慢，加上java早期本身也不怎么快，所以java在gui上几乎是没有咬下任何市场，早期在智能机上的j2me也被教主复出之后的iphone搞死了，swt最大的遗产就是eclipse了，swing最大的遗产就是idea还有netbeans了</p>
+<hr>
+<p>然后进入第三个阶段，java后来发现，swing这个搞法不是个办法，没人用，sun在临死之前，总算头脑清醒了一回，走回swt的道路，搞出了javafx，然后sun就挂了，一开始是找ibm收购，ibm嫌贵，不买，然后sun才去找oracle收购，javafx也跟swt一样，根据os会自动选择不同的图形库，比如win上用的就是directx3d，mac上用的就是metal（将来，参考[project lanai](<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=project">https://www.zhihu.com/search?q=project</a> lanai&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={“sourceType”%3A”answer”%2C”sourceId”%3A811401387})）</p>
+<p>那这里还有一个分支，那就是教主复出之后，把iphone搞起来了，一搞起来就把可以装在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=j2me&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">j2me</a>的智能机给搞死了，然后有一家公司叫做Google，Google其实在sun作为java当家的时候，Google大量参与了java标准的制定，一个是Google一个是Apache，这俩货几乎常年都在jcp执行委员会里呆着，所以java早期的大量标准的制定，都跟这俩货有很大关系。那Google看到苹果做出了iphone之后，就有样学样，弄出了安卓，当然一开始是鲁宾做的，然后Google收购来的，但是Google在安卓上使用的是一个魔改的java，所以保留了很多java原始的特性，当然Google拿到java之后，它就没照搬swing，但是呢，它保留了很多swing的影子，然后在Google被oracle告了之后，另劈新道，搞出了dart，flutter这些东西，而Google的skia引擎目前主要还是依赖opengl渲染，将来会加入vulkan渲染，因为这两是标准，这就跟swing很像了</p>
+<p>你看，这个阶段swt变成了javafx，swing承认失败，java2d组开始更多地投入javafx，而javafx的设计沿袭了swt的设计，就是对操作系统底层的api做一层thin wrapper，但是安卓这边，则更多地延续了swing的设计，到了flutter阶段，实际上Google也还是自己做一层thick wrapper，flutter能保证不同操作系统上看到的界面是一样的，如果你用的是[material design](<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=material">https://www.zhihu.com/search?q=material</a> design&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={“sourceType”%3A”answer”%2C”sourceId”%3A811401387})的话，那在ios上也有涟漪效果，如果你用的是<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=cuptertino&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">cuptertino</a>的话，那你在安卓机器上也能看到金属高光，但是这样做成本就高，但是Google有钱也有人，而且一直有传言说，Google招了太多人进去，无事可做，所以安排点工作给他们去做，哪怕这些工作只是重复造轮子，但是总比让他们闲着好，所以就让他们去造更快更好的轮子吧。flutter的设计就有一点这种味道在里面，什么都自己做，而且Google还做得相当不错</p>
+<p>但是java没那么多人，所以javafx就选择了更加鸡贼一点的道路，做一层thin wrapper，看上去不一样就不一样，跨平台能用就行，javafx的组其实没有那么多人，常见就那么几个，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=johan&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">johan</a>，kevin，还有巴西人博格斯，其实没几个，flutter team的规模远比javafx的开发规模要大得多</p>
+<p>那这个阶段就是我们目前正在经历的阶段，如果你问java gui用啥，那就是javafx，这个是java所有项目的共识，javafx也比较容易扩展，13之后，你都可以用native的手段来渲染，可以借助nativefx或者是driftfx项目，然后用上比如qt之类的控件。这里说一下，javafx的社区可以看到很多说德语的人，来自德国，奥地利，瑞士等，很多相关项目都是德国人在做，德国人在这种工程领域上造诣可见一斑。如果你不纠结于java自身，那你也可以看看flutter这些，dart/flutter其实就是Google版的java/javafx，因为dart以及dartvm的作者之一<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=lars&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:811401387%7D">lars</a> bak本身就是缺省jvm hotspot的作者，它的很多设计，原理什么，都跟java社区的差不多，不能说完全一样，但是你都能看到很多共同点，比如pub就是maven，skia就是prism，dart就是java，如果你会java的话，搞dart很快，分分钟上手</p>
+<hr>
+<p>总结一下，第一阶段awt，第二阶段swing和swt，第三阶段javafx和flutter</p>
+<p>如果你要学，学最后两个</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://blog.hegra.top">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://blog.hegra.top/2023/03/02/Java%20GUI%E7%9A%84%E5%8E%86%E5%8F%B2/">http://blog.hegra.top/2023/03/02/Java%20GUI%E7%9A%84%E5%8E%86%E5%8F%B2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/02/Rust%E7%9A%84%E7%89%B9%E7%82%B9/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/03/02/%E7%A7%91%E6%99%AE%E5%B8%B8%E8%A7%81%E7%9A%84%E6%AD%8C%E5%90%8D%E5%90%8E%E7%BC%80/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/Spring%20Boot%20%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%B1%87%E6%80%BB/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/Spring%20Boot%20%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%B1%87%E6%80%BB/" title="No title">No title</a><time datetime="2023-03-02T15:40:41.478Z" title="Created 2023-03-02 23:40:41">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/npm%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/npm%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="No title">No title</a><time datetime="2023-03-02T15:40:41.430Z" title="Created 2023-03-02 23:40:41">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7/" title="No title">No title</a><time datetime="2023-03-02T15:40:34.690Z" title="Created 2023-03-02 23:40:34">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BD%92%E7%BA%B3/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BD%92%E7%BA%B3/" title="No title">No title</a><time datetime="2023-03-02T15:40:34.670Z" title="Created 2023-03-02 23:40:34">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" title="No title">No title</a><time datetime="2023-03-02T15:40:34.661Z" title="Created 2023-03-02 23:40:34">2023-03-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
