@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1、为什么使用继承从已有的类派生出新的类，称为继承。 在不同的类中也可能会有共同的特征和动作，可以把这些共同的特征和动作放在一个类中，让其它类共享。 因此可以定义一个通用类，然后将其扩展为其它多个特定类，这些特定类继承通用类中的特征和动作。 继承是 Java 中实现软件重用的重要手段，避免重复，易于维护，易于理解。 2、父类和子类如果类 B 从类 A 派生，或者说类 B 扩展自类 A，或者说类 B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://blog.hegra.top/2023/03/02/Java%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、为什么使用继承从已有的类派生出新的类，称为继承。 在不同的类中也可能会有共同的特征和动作，可以把这些共同的特征和动作放在一个类中，让其它类共享。 因此可以定义一个通用类，然后将其扩展为其它多个特定类，这些特定类继承通用类中的特征和动作。 继承是 Java 中实现软件重用的重要手段，避免重复，易于维护，易于理解。 2、父类和子类如果类 B 从类 A 派生，或者说类 B 扩展自类 A，或者说类 B">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-03-02T15:40:34.618Z">
+<meta property="article:modified_time" content="2023-01-31T18:57:54.923Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.hegra.top/2023/03/02/Java%E7%BB%A7%E6%89%BF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-01 02:57:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-03-02T15:40:34.618Z" title="Created 2023-03-02 23:40:34">2023-03-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-01-31T18:57:54.923Z" title="Updated 2023-02-01 02:57:54">2023-02-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="1、为什么使用继承"><a href="#1、为什么使用继承" class="headerlink" title="1、为什么使用继承"></a><strong>1、为什么使用继承</strong></h3><p>从已有的类派生出新的类，称为继承。</p>
+<p>在不同的类中也可能会有共同的特征和动作，可以把这些共同的特征和动作放在一个类中，让其它类共享。</p>
+<p>因此可以定义一个通用类，然后将其扩展为其它多个特定类，这些特定类继承通用类中的特征和动作。</p>
+<p>继承是 Java 中实现软件重用的重要手段，避免重复，易于维护，易于理解。</p>
+<h3 id="2、父类和子类"><a href="#2、父类和子类" class="headerlink" title="2、父类和子类"></a><strong>2、父类和子类</strong></h3><p>如果类 B 从类 A 派生，或者说类 B 扩展自类 A，或者说类 B 继承类 A，</p>
+<p>则称类 A 为”父类”，也称为超类、基类；</p>
+<p>称类 B 为”子类”，也称为次类、扩展类、派生类。</p>
+<p>子类从它的父类中继承可访问的数据域和方法，也可以添加新的数据域和新的方法。</p>
+<p>定义继承的语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class 子类名 extends 父类名</span><br></pre></td></tr></table></figure>
+
+<p>例如：Shape 类是父类，其子类可以有 Circle 类、Rectangle 类、Triangle 类，等等。</p>
+<p>继承的注意点：</p>
+<ul>
+<li> 子类不是父类的子集，子类一般比父类包含更多的数据域和方法。</li>
+<li>父类中的 private 数据域在子类中是不可见的，因此在子类中不能直接使用它们。</li>
+<li>继承是为”是一个”的关系建模的，父类和其子类间必须存在”是一个”的关系，否则不能用继承。<br>但也并不是所有”是一个”的关系都应该用继承。例如，正方形是一个矩形，但不能让 Square 类来继承 Rectangle 类，因为正方形不能从矩形扩展得到任何东西。正确的继承关系是 Square 类继承 Shape 类</li>
+<li>Java 只允许单一继承（即一个子类只能有一个直接父类），C++ 可以多继承（即一个子类有多个直接父类）。</li>
+</ul>
+<h3 id="3、super-关键字"><a href="#3、super-关键字" class="headerlink" title="3、super 关键字"></a><strong>3、super 关键字</strong></h3><p>super 表示使用它的类的父类。super 可用于：</p>
+<ul>
+<li>调用父类的构造方法；</li>
+<li>调用父类的方法（子类覆盖了父类的方法时）；</li>
+<li>访问父类的数据域（可以这样用但没有必要这样用）。</li>
+</ul>
+<p>调用父类的构造方法语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">super();  </span><br><span class="line"></span><br><span class="line">或   </span><br><span class="line"></span><br><span class="line">super(参数列表);</span><br></pre></td></tr></table></figure>
+
+<p>注意：super 语句必须是子类构造方法的第一条语句。不能在子类中使用父类构造方法名来调用父类构造方法。 父类的构造方法不被子类继承。调用父类的构造方法的唯一途径是使用 super 关键字，如果子类中没显式调用，则编译器自动将 super(); 作为子类构造方法的第一条语句。这会形成一个构造方法链。</p>
+<p>静态方法中不能使用 super 关键字。</p>
+<p>调用父类的方法语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">super.方法名(参数列表);</span><br></pre></td></tr></table></figure>
+
+<p>如果是继承的方法，是没有必要使用 super 来调用，直接即可调用。但如果子类覆盖或重写了父类的方法，则只有使用 super 才能在子类中调用父类中的被重写的方法。</p>
+<h3 id="4、this-关键字"><a href="#4、this-关键字" class="headerlink" title="4、this 关键字"></a><strong>4、this 关键字</strong></h3><p>this 关键字表示当前对象。可用于：</p>
+<ul>
+<li>调用当前类的构造方法，并且必须是方法的第一条语句。如：this(); 调用默认构造方法。this(参数); 调用带参构造方法。</li>
+<li>限定当前对象的数据域变量。一般用于方法内的局部变量与对象的数据域变量同名的情况。如 this.num = num。this.num 表示当前对象的数据域变量 num，而 num 表示方法中的局部变量。</li>
+</ul>
+<h3 id="1、final-修饰类中的属性或者变量"><a href="#1、final-修饰类中的属性或者变量" class="headerlink" title="1、final 修饰类中的属性或者变量"></a>1、final 修饰类中的属性或者变量</h3><p>无论属性是基本类型还是引用类型，final 所起的作用都是变量里面存放的”值”不能变。</p>
+<p>这个值，对于基本类型来说，变量里面放的就是实实在在的值，如 1，”abc” 等。</p>
+<p>而引用类型变量里面放的是个地址，所以用 final 修饰引用类型变量指的是它里面的地址不能变，并不是说这个地址所指向的对象或数组的内容不可以变，这个一定要注意。</p>
+<p>例如：类中有一个属性是 <strong>final Person p=new Person(“name”);</strong> 那么你不能对 p 进行重新赋值，但是可以改变 p 里面属性的值 <strong>p.setName(‘newName’);</strong></p>
+<p>final 修饰属性，声明变量时可以不赋值，而且一旦赋值就不能被修改了。对 final 属性可以在三个地方赋值：声明时、初始化块中、构造方法中，总之一定要赋值。</p>
+<h3 id="2、final修饰类中的方法"><a href="#2、final修饰类中的方法" class="headerlink" title="2、final修饰类中的方法"></a>2、final修饰类中的方法</h3><p>作用：可以被继承，但继承后不能被重写。</p>
+<h3 id="3、final修饰类"><a href="#3、final修饰类" class="headerlink" title="3、final修饰类"></a>3、final修饰类</h3><p>作用：类不可以被继承。</p>
+<h3 id="1、构造方法"><a href="#1、构造方法" class="headerlink" title="1、构造方法"></a>1、构造方法</h3><ul>
+<li>子类的所有构造方法内部， 第一行会（隐式）自动先调用父类的无参构造函数super()；</li>
+<li>如果子类构造方法第一行显式调用了父类构造方法，系统就不再调用无参的super()了。</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Base</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Base--默认构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Base</span><span class="params">(<span class="type">int</span> c)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Base--有参构造方法--&quot;</span> + c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Derived</span> <span class="keyword">extends</span> <span class="title class_">Base</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Derived</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// super(); //系统会自动隐式先调用父类的无参构造函数 super(); //必须是第一行，否则不能编译 </span></span><br><span class="line">        System.out.println(<span class="string">&quot;Derived--默认构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Derived</span><span class="params">(<span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="comment">// super(); //系统会自动隐式先调用父类的无参构造函数 super(); //必须是第一行，否则不能编译</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Derived--有参构造方法&quot;</span> + c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Derived</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(a); <span class="comment">//如果子类构造方法第一行显式调用了父类构造方法，系统就不再调用无参的super()了。</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Derived--有参构造方法--&quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;============子类无参============&quot;</span>);</span><br><span class="line">        <span class="type">Derived</span> <span class="variable">no</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Derived</span>();</span><br><span class="line">        System.out.println(<span class="string">&quot;============子类有参============&quot;</span>);</span><br><span class="line">        <span class="type">Derived</span> <span class="variable">have</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Derived</span>(<span class="number">33</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;============子类有参============&quot;</span>);</span><br><span class="line">        <span class="type">Derived</span> <span class="variable">have2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Derived</span>(<span class="number">33</span>, <span class="number">55</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">============子类无参============</span><br><span class="line">Base--默认构造方法</span><br><span class="line">Derived--默认构造方法</span><br><span class="line">============子类有参============</span><br><span class="line">Base--默认构造方法</span><br><span class="line">Derived--有参构造方法33</span><br><span class="line">============子类有参============</span><br><span class="line">Base--有参构造方法--33</span><br><span class="line">Derived--有参构造方法--55</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>如果父类没有无参构造函数，创建子类时，不能编译，除非在构造函数代码体中的第一行显式调用父类有参构造函数。</p>
+<h3 id="1、Java-转型问题"><a href="#1、Java-转型问题" class="headerlink" title="1、Java 转型问题"></a>1、Java 转型问题</h3><p>其实并不复杂，只要记住一句话：父类引用指向子类对象。</p>
+<p>什么叫父类引用指向子类对象，且听我慢慢道来。</p>
+<p>从 2 个名词开始说起<strong>：向上转型(upcasting)</strong> 、**向下转型(downcasting)**。</p>
+<p>举个例子：有2个类，Father 是父类，Son 类继承自 Father。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Father f1 = new Son();   // 这就叫 upcasting （向上转型)</span><br><span class="line">// 现在 f1 引用指向一个Son对象</span><br><span class="line"></span><br><span class="line">Son s1 = (Son)f1;   // 这就叫 downcasting (向下转型)</span><br><span class="line">// 现在f1 还是指向 Son对象</span><br></pre></td></tr></table></figure>
+
+<p><strong>第2个例子：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Father f2 = new Father();</span><br><span class="line">Son s2 = (Son)f2;       // 出错，子类引用不能指向父类对象</span><br></pre></td></tr></table></figure>
+
+<p>你或许会问，第1个例子中：Son s1 = (Son)f1; 为什么是正确的呢。</p>
+<p>很简单因为 f1 指向一个子类对象，<strong>Father f1 = new Son();</strong> 子类 s1 引用当然可以指向子类对象了。</p>
+<p>而 f2 被传给了一个 Father 对象，<strong>Father f2 = new Father();</strong> 子类 s1 引用不能指向父类对象。</p>
+<p><strong>总结：</strong></p>
+<p>1、父类引用指向子类对象，而子类引用不能指向父类对象。</p>
+<p>2、把子类对象直接赋给父类引用叫upcasting向上转型，向上转型不用强制转换吗，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Father f1 = new Son();</span><br></pre></td></tr></table></figure>
+
+<p>3、把指向子类对象的父类引用赋给子类引用叫向下转型(downcasting)，要强制转换，如：</p>
+<p>f1 就是一个指向子类对象的父类引用。把f1赋给子类引用 s1 即 <strong>Son s1 = (Son)f1;</strong></p>
+<p>其中 f1 前面的(Son)必须加上，进行强制转换。</p>
+<h3 id="转型例子补充："><a href="#转型例子补充：" class="headerlink" title="转型例子补充："></a>转型例子补充：</h3><p>父类申明变量指向子类实例，该父类变量不能调用父类不存在的变量和方法，否则会编译错误</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">move</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;动物可以移动&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">move</span><span class="params">()</span>&#123;</span><br><span class="line">       age = <span class="number">10</span>;</span><br><span class="line">      System.out.println(<span class="string">&quot;狗可以跑和走&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bark</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;狗可以吠叫&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestOverride</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">      <span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Animal</span>(); <span class="comment">// Animal 对象</span></span><br><span class="line">      <span class="type">Animal</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// Dog 对象</span></span><br><span class="line"> </span><br><span class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></span><br><span class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></span><br><span class="line">      <span class="comment">// b.age;//去掉前注释符号，会编译错误</span></span><br><span class="line">      <span class="comment">// b.bark();//去掉前注释符号，会编译错误</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="构造方法补充："><a href="#构造方法补充：" class="headerlink" title="构造方法补充："></a>构造方法补充：</h3><p>java文件被编译成class文件时，在子类的所有构造函数中的第一行（第一个语句）会默认自动添加 super() 语句，在执行子类的构造函数前，总是会先执行父类中的构造函数。</p>
+<p><strong>在编写代码要注意：</strong></p>
+<ul>
+<li> 1.如果父类中不含 默认构造函数（就是 类名() ），那么子类中的super()语句就会执行失败，系统就会报错。一般 默认构造函数 编译时会自动添加，但如果类中已经有一个构造函数时，就不会添加。</li>
+<li> 2.执行父类构造函数的语句只能放在函数内语句的首句，不然会报错。</li>
+</ul>
+<p>在继承关系中，在调用函数（方法）或者类中的成员变量时，JVM（JAVA虚拟机）会先检测当前的类（也就是子类）是否含有该函数或者成员变量，如果有，就执行子类中的，如果没有才会执行父类中的。</p>
+<h3 id="1、关于成员内部类的继承问题"><a href="#1、关于成员内部类的继承问题" class="headerlink" title="1、关于成员内部类的继承问题"></a>1、关于成员内部类的继承问题</h3><p>一般来说，内部类是很少用来作为继承用的。但是当用来继承的话，要注意两点：</p>
+<ul>
+<li> 1）成员内部类的引用方式必须为 Outter.Inner。</li>
+<li> 2）构造器中必须有指向外部类对象的引用，并通过这个引用调用super()。代码摘自《Java编程思想》</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WithInner</span> &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Inner</span>&#123;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">InheritInner</span> <span class="keyword">extends</span> <span class="title class_">WithInner</span>.Inner &#123;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">// InheritInner() 是不能通过编译的，一定要加上形参</span></span><br><span class="line">    InheritInner(WithInner wi) &#123;</span><br><span class="line">        wi.<span class="built_in">super</span>(); <span class="comment">//必须有这句调用</span></span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">WithInner</span> <span class="variable">wi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">WithInner</span>();</span><br><span class="line">        <span class="type">InheritInner</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InheritInner</span>(wi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://blog.hegra.top">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://blog.hegra.top/2023/03/02/Java%E7%BB%A7%E6%89%BF/">http://blog.hegra.top/2023/03/02/Java%E7%BB%A7%E6%89%BF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/02/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/03/02/Java%E7%9A%84STL/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF"><span class="toc-number">1.</span> <span class="toc-text">1、为什么使用继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%88%B6%E7%B1%BB%E5%92%8C%E5%AD%90%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">2、父类和子类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81super-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">3.</span> <span class="toc-text">3、super 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81this-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">4.</span> <span class="toc-text">4、this 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81final-%E4%BF%AE%E9%A5%B0%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E8%80%85%E5%8F%98%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">1、final 修饰类中的属性或者变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81final%E4%BF%AE%E9%A5%B0%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">2、final修饰类中的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81final%E4%BF%AE%E9%A5%B0%E7%B1%BB"><span class="toc-number">7.</span> <span class="toc-text">3、final修饰类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">1、构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81Java-%E8%BD%AC%E5%9E%8B%E9%97%AE%E9%A2%98"><span class="toc-number">9.</span> <span class="toc-text">1、Java 转型问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%9E%8B%E4%BE%8B%E5%AD%90%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">10.</span> <span class="toc-text">转型例子补充：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">11.</span> <span class="toc-text">构造方法补充：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%85%B3%E4%BA%8E%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E9%97%AE%E9%A2%98"><span class="toc-number">12.</span> <span class="toc-text">1、关于成员内部类的继承问题</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/04/AI%E4%BA%8C%E5%88%86/" title="AI二分"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI二分"/></a><div class="content"><a class="title" href="/2023/03/04/AI%E4%BA%8C%E5%88%86/" title="AI二分">AI二分</a><time datetime="2023-03-03T16:25:17.387Z" title="Created 2023-03-04 00:25:17">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/Spring%20Boot%20%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%B1%87%E6%80%BB/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/Spring%20Boot%20%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%B1%87%E6%80%BB/" title="No title">No title</a><time datetime="2023-03-02T15:40:41.478Z" title="Created 2023-03-02 23:40:41">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/npm%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/npm%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" title="No title">No title</a><time datetime="2023-03-02T15:40:41.430Z" title="Created 2023-03-02 23:40:41">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7/" title="No title">No title</a><time datetime="2023-03-02T15:40:34.690Z" title="Created 2023-03-02 23:40:34">2023-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BD%92%E7%BA%B3/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2023/03/02/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%BD%92%E7%BA%B3/" title="No title">No title</a><time datetime="2023-03-02T15:40:34.670Z" title="Created 2023-03-02 23:40:34">2023-03-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
