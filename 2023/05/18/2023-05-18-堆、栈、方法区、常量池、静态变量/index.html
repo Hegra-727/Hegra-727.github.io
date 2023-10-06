@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>堆、栈、方法区、常量池、静态变量 | Hegra's world</title><meta name="author" content="Hegra"><meta name="copyright" content="Hegra"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="QwQ 1、Java栈Java在函数中定义的基本类型（int,long,short,byte,float,double,boolean,char）的变量（局部变量和函数的形参）的引用和数据，以及对象的引用都放在栈中存储。 1、栈的特点 1、存取速度快。仅次于CPU中的寄存器。 2、每个线程都会有一个栈空间，不同栈之间不能直接访问，所以线程之间不能共享栈中的数据。 3、存在同一个栈中的数据是可以共享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆、栈、方法区、常量池、静态变量">
+<meta property="og:url" content="http://blog.hegra.top/2023/05/18/2023-05-18-%E5%A0%86%E3%80%81%E6%A0%88%E3%80%81%E6%96%B9%E6%B3%95%E5%8C%BA%E3%80%81%E5%B8%B8%E9%87%8F%E6%B1%A0%E3%80%81%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/index.html">
+<meta property="og:site_name" content="Hegra&#39;s world">
+<meta property="og:description" content="QwQ 1、Java栈Java在函数中定义的基本类型（int,long,short,byte,float,double,boolean,char）的变量（局部变量和函数的形参）的引用和数据，以及对象的引用都放在栈中存储。 1、栈的特点 1、存取速度快。仅次于CPU中的寄存器。 2、每个线程都会有一个栈空间，不同栈之间不能直接访问，所以线程之间不能共享栈中的数据。 3、存在同一个栈中的数据是可以共享">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-05-18T10:45:01.000Z">
+<meta property="article:modified_time" content="2023-05-18T11:35:18.146Z">
+<meta property="article:author" content="Hegra">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.hegra.top/2023/05/18/2023-05-18-%E5%A0%86%E3%80%81%E6%A0%88%E3%80%81%E6%96%B9%E6%B3%95%E5%8C%BA%E3%80%81%E5%B8%B8%E9%87%8F%E6%B1%A0%E3%80%81%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '堆、栈、方法区、常量池、静态变量',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-18 19:35:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://edu-727.oss-cn-nanjing.aliyuncs.com/%E7%BB%B4%E5%B0%BC.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hegra's world</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">堆、栈、方法区、常量池、静态变量</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-18T10:45:01.000Z" title="发表于 2023-05-18 18:45:01">2023-05-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-18T11:35:18.146Z" title="更新于 2023-05-18 19:35:18">2023-05-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="堆、栈、方法区、常量池、静态变量"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>QwQ</p>
+<h2 id="1、Java栈"><a href="#1、Java栈" class="headerlink" title="1、Java栈"></a>1、Java栈</h2><p>Java在函数中定义的基本类型（int,long,short,byte,float,double,boolean,char）的变量（局部变量和函数的形参）的引用和数据，以及对象的引用都放在栈中存储。</p>
+<h3 id="1、栈的特点"><a href="#1、栈的特点" class="headerlink" title="1、栈的特点"></a>1、栈的特点</h3><ul>
+<li>1、存取速度快。仅次于CPU中的寄存器。</li>
+<li>2、每个线程都会有一个栈空间，不同栈之间不能直接访问，所以线程之间不能共享栈中的数据。</li>
+<li>3、存在同一个栈中的数据是可以共享的。</li>
+</ul>
+<blockquote>
+<p>比如我们定义<code>int a=3；int b=3；a=4；</code><br> 编译器先处理<code>int a=3；</code>首先会在栈中创建一个变量a的引用，然后在栈中查找有没有字面值为3的地址，如果有则将a指向这个地址；如果没有则开辟一块内存放字面值3，然后将a引用指向这个地址。<br> 接着处理<code>int b=3；</code>，在栈中创建b的引用变量，由于在栈中字面值为3的地址已经存在，所以直接将b指向这个地址。这样a和b同时指向了字面值为3的这个地址。<br> 接着处理<code>a=4；</code>，会在栈中查找字面值为4的地址，如没有就开辟内存存放字面值4，让a指向这个地址，如有就将a直接指向这个地址。<br> 此时b依然等于3，不会等于4。这点和对象的引用不同，需要注意。</p>
+</blockquote>
+<ul>
+<li>4、如果栈内存中没有足够的空间可以使用，JVM会抛出java.lang.StackOverFlowError异常。</li>
+<li>5、栈中定义的变量，在超出变量的作用域后，Java会自动释放为变量所分配的内存空间，该内存空间可以立即被另作他用。</li>
+</ul>
+<h2 id="2、堆"><a href="#2、堆" class="headerlink" title="2、堆"></a>2、堆</h2><p>堆中主要用于存放new出来的对象和数组。下面举例看下对象的实例化过程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person a=<span class="keyword">new</span> <span class="title class_">Person</span> (<span class="string">&quot;123&quot;</span>)；</span><br><span class="line">Person b=<span class="keyword">new</span> <span class="title class_">Person</span> (<span class="string">&quot;123&quot;</span>)；</span><br></pre></td></tr></table></figure>
+
+<p>编译器会先执行<code>Person a=new Person (&quot;123&quot;)；</code>，会在堆中开辟内存存放创建的对象<code>Person (&quot;123&quot;)</code>，在栈中创建变量a，将a指向对象的内存首地址，a就是该对象的引用。<br> 接着执行<code>Person b=new Person (&quot;123&quot;)；</code>，虽然前面已经创建了对象<code>Person (&quot;123&quot;)</code>，但是只要使用关键字<code>new</code>，就会在堆中开辟一块新的内存存放创建的对象，在栈中创建变量b，将b指向新对象的首地址。所以a和b指向并不是同一个对象。<br> 如果定义<code>Person c = a；a.setName(&quot;234&quot;)</code>那么<code>String name=c.getName()</code>就等于“234”。<br> 执行<code>Person c = a；</code>则变量a和c都会指向同一个对象，所以使用a变量修改对象中的内容时，c指向的对象的内容也会改变。</p>
+<h3 id="2-1、特点"><a href="#2-1、特点" class="headerlink" title="2.1、特点"></a>2.1、特点</h3><ul>
+<li>1、存取速度比栈中的慢。</li>
+<li>2、一个JVM只有一个堆内存，所以线程间是可以共享堆内存中的数据的。</li>
+<li>3、如果堆中内存不足，则会抛出java.lang.OutOfMemoryError异常。</li>
+<li>4、定义在栈中的变量a指向堆中的对象Person的首地址，在超出变量的作用域后，Java会自动释放a所分配的内存空间，此时就没有引用指向对象了，但是对象并不会马上被回收，需要等某个时间通过垃圾回收来回收内存。</li>
+</ul>
+<h2 id="3、常量池"><a href="#3、常量池" class="headerlink" title="3、常量池"></a>3、常量池</h2><p>常量池分为两种：<strong>静态常量池和运行时常量池。</strong><br> <strong>静态常量池</strong><br> 静态常量池指的是在编译期确定，保存在class文件中的一些数据。常量池主要用于存放两大类常量：<strong>字面量(Literal)和符号引用量，字面量相当于Java语言层面常量的概念，如文本字符串、声明为final的常量值等</strong>，符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：</p>
+<ul>
+<li>1、类和接口的全限定名；</li>
+<li>2、字段的名称和描述符；</li>
+<li>3、方法的名称和描述符。<br>   <strong>运行时常量池</strong><br>   在运行时常量池是方法区的一部分，<strong>在JDK1.7之后运行时常量池从方法区中移出，放在堆中。</strong><br>   <strong>常量池是为了避免频繁的创建和销毁对象而影响系统性能，其实现了对象的共享。</strong></li>
+</ul>
+<h3 id="3-1、字符串常量池"><a href="#3-1、字符串常量池" class="headerlink" title="3.1、字符串常量池"></a>3.1、字符串常量池</h3><p>对于字符串，其对象的引用都是存储在栈中的，<strong>如果是编译期已经创建好(直接用双引号定义的)的就存储在常量池中，如果是运行期（new出来的）才能确定的就存储在堆中。</strong>对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;china&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;china&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="string">&quot;china&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">ss1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;china&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">ss2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;china&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">ss3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;china&quot;</span>);</span><br><span class="line">s1==s2==s3； <span class="comment">//true</span></span><br><span class="line">ss1!=ss2!=ss3!=s1!=s2!=ss3； <span class="comment">//true</span></span><br><span class="line">ss1.eqauls(ss2)；<span class="comment">//true</span></span><br><span class="line">ss1.eqauls(ss3)；<span class="comment">//true</span></span><br><span class="line">ss1.eqauls(s1)；<span class="comment">//true</span></span><br><span class="line">ss1.eqauls(s2)；<span class="comment">//true</span></span><br><span class="line">ss1.eqauls(s3)；<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.staticaly.com/gh/Hegra-727/Picture@main/Temp/7264052-d25fb69d9cbd66d7.webp" alt="7264052-d25fb69d9cbd66d7"></p>
+<p> 可以看出s1、s2、s3在编译期就被创建，并存入到了常量池中。编译器在执行<code>String s1 = &quot;china&quot;;</code>时会先在常量池中查找是否存在字符串常量“china”，如果不存在就在常量池中new一个china字符串，存在就不new，然后让栈中的变量指向这个china字符串。因此常量池中只有一个china字符串对象，然后在执行<code>String s2 = &quot;china&quot;;String s3 = &quot;china&quot;;</code>时，会在常量池中找到china字符串，并让s2、s3指向它。<br> 对于<code>String ss1 = new String(&quot;china&quot;);</code>在编译时并不会创建，在运行时，通过new产生一个字符串（假设为“china”）时，会先去常量池中查找是否已经存在字符串“china”，如果不存在则在常量池中创建一个“china”字符串对象，然后在堆中再创建一个常量池中的“china”对象的拷贝对象；如果常量池中存在，就直接在堆中创建一个常量池中此“china”对象的拷贝对象。</p>
+<h3 id="3-2、包装类实现了常量池技术"><a href="#3-2、包装类实现了常量池技术" class="headerlink" title="3.2、包装类实现了常量池技术"></a>3.2、包装类实现了常量池技术</h3><p>对于8种基本数据类型大部分都有自己的包装类，其中<code>Byte,Short,Integer,Long,Character,Boolean都实现了常量池技术</code>，；<strong>而Byte,Short,Integer,Long类型在装箱时会缓存了范围[-128,127]的数据到数组中，Character会缓存[0,127]范围的数据到数组中进行缓存。</strong></p>
+<ul>
+<li>1、<strong>对于Integer来说，范围是[-128,127]的数在自动装箱时全部被自动加入到了常量池里面，具体可查看Integer.valueof(int i)方法。</strong><br>   <strong>Integer.valueOf()</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">    <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>IntegerCache类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">IntegerCache</span> &#123;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">low</span> <span class="operator">=</span> -<span class="number">128</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> high;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> Integer cache[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    <span class="comment">// high value may be configured by property</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">integerCacheHighPropValue</span> <span class="operator">=</span></span><br><span class="line">        VM.getSavedProperty(<span class="string">&quot;java.lang.Integer.IntegerCache.high&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (integerCacheHighPropValue != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> parseInt(integerCacheHighPropValue);</span><br><span class="line">            i = Math.max(i, <span class="number">127</span>);</span><br><span class="line">            <span class="comment">// Maximum array size is Integer.MAX_VALUE</span></span><br><span class="line">            h = Math.min(i, Integer.MAX_VALUE - (-low) -<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span>( NumberFormatException nfe) &#123;</span><br><span class="line">            <span class="comment">// If the property cannot be parsed into an int, ignore it.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    high = h;</span><br><span class="line"></span><br><span class="line">    cache = <span class="keyword">new</span> <span class="title class_">Integer</span>[(high - low) + <span class="number">1</span>];</span><br><span class="line">    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> low;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; cache.length; k++)</span><br><span class="line">        cache[k] = <span class="keyword">new</span> <span class="title class_">Integer</span>(j++);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// range [-128, 127] must be interned (JLS7 5.1.7)</span></span><br><span class="line">    <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="title function_">IntegerCache</span><span class="params">()</span> &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Integer i1=<span class="number">10</span>;</span><br><span class="line">        Integer i2=<span class="number">10</span>;</span><br><span class="line">        System.out.println(i1==i2);</span><br><span class="line">                System.out.println(i1.equals(i2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出：</span><br><span class="line"><span class="literal">true</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2、使用new关键字创建Integer时，即使数据在范围[-128,127]，也不会去缓存中查找，直接在堆中创建一个新的Integer对象。<strong>并不会像new String(“123”)可能需要在堆中和常量池中各创建一个对象。</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Integer i1=<span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">Integer i2=<span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br><span class="line">Integer i3=<span class="number">10</span>;</span><br><span class="line">System.out.println(i1==i2); <span class="comment">//false</span></span><br><span class="line">System.out.println(i1.equals(i2)); <span class="comment">//true</span></span><br><span class="line">System.out.println(i1==i3); <span class="comment">//false</span></span><br><span class="line">System.out.println(i1.equals(i3)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>-3、当整数不在[-128,127]范围内时，就会在堆中创建对象。<br> 看下面例子在内存中的分配。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="number">9</span>; <span class="comment">//自动拆箱 Integer.intValue()</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> <span class="number">9</span>; <span class="comment">//自动拆箱 Integer.intValue()</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> <span class="variable">A2</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> <span class="variable">B2</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">Integer</span> <span class="variable">a3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">9</span>);</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">b3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">Integer</span> <span class="variable">a4</span> <span class="operator">=</span> <span class="number">9</span>; <span class="comment">//自动装箱 调用Integer.valueOf(int)</span></span><br><span class="line">    <span class="type">Integer</span> <span class="variable">b4</span> <span class="operator">=</span> <span class="number">9</span>; <span class="comment">//自动装箱 调用Integer.valueOf(int)</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如下图</p>
+<p><img src="https://cdn.staticaly.com/gh/Hegra-727/Picture@main/Temp/7264052-63e1f52b1e1690b1.webp" alt="7264052-63e1f52b1e1690b1"></p>
+<h2 id="4、方法区"><a href="#4、方法区" class="headerlink" title="4、方法区"></a>4、方法区</h2><p>方法区也是各个线程共享的内存区域，它用于存储已经被虚拟机加载的类信息、常量、静态变量、即编译器编译后的代码等数据。静态变量、常量在方法区,所有方法,包括静态和非静态的,也在方法区。(1.6及之前，之后的常量、静态在堆区中。但是保留了运行时常量池)</p>
+<h2 id="5、成员变量和局部变量在内存中的分配"><a href="#5、成员变量和局部变量在内存中的分配" class="headerlink" title="5、成员变量和局部变量在内存中的分配"></a>5、成员变量和局部变量在内存中的分配</h2><p>对于成员变量和局部变量：成员变量就是方法外部，类的内部定义的变量；局部变量就是方法或语句块内部定义的变量。局部变量必须初始化。 形式参数是局部变量，局部变量的数据存在于栈内存中。栈内存中的局部变量随着方法的消失而消失。 成员变量存储在堆中的对象里面，由垃圾回收器负责回收。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BirthDate</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> day;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> month;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> year;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BirthDate</span><span class="params">(<span class="type">int</span> d, <span class="type">int</span> m, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">        day = d;</span><br><span class="line">        month = m;</span><br><span class="line">        year = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 省略get,set方法………</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">date</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line">        <span class="type">Test</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test</span>();</span><br><span class="line">        test.change(date);</span><br><span class="line">        <span class="type">BirthDate</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BirthDate</span>(<span class="number">7</span>, <span class="number">7</span>, <span class="number">1970</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">        i = <span class="number">1234</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.staticaly.com/gh/Hegra-727/Picture@main/Temp/7264052-5c4d25d45c80143d.webp" alt="7264052-5c4d25d45c80143d"></p>
+<p>对于以上这段代码，date为局部变量，i,d,m,y都是形参为局部变量，day，month，year为成员变量。下面分析一下代码执行时候的变化：</p>
+<ol>
+<li><p>main方法开始执行：int date = 9; date局部变量，基础类型，引用和值都存在栈中。</p>
+</li>
+<li><p>Test test = new Test();test为对象引用，存在栈中，对象(new Test())存在堆中。</p>
+</li>
+<li><p>test.change(date);  i为局部变量，引用和值存在栈中。当方法change执行完成后，i就会从栈中消失。</p>
+</li>
+<li><p>BirthDate d1= new BirthDate(7,7,1970); d1为对象引用，存在栈中，对象(new BirthDate())存在堆中，其中d，m，y为局部变量存储在栈中，且它们的类型为基础类型，因此它们的数据也存储在栈中。day,month,year为成员变量，它们存储在堆中(new BirthDate()里面)。当BirthDate构造方法执行完之后，d,m,y将从栈中消失。</p>
+</li>
+<li><p>main方法执行完之后，date变量，test，d1引用将从栈中消失，new Test(), new BirthDate()将等待垃圾回收.</p>
+</li>
+</ol>
+<p>冒不义之罪转载自<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/90cab6d29fd2">Java堆、栈、方法区、常量池</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.hegra.top/">Hegra</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.hegra.top/2023/05/18/2023-05-18-%E5%A0%86%E3%80%81%E6%A0%88%E3%80%81%E6%96%B9%E6%B3%95%E5%8C%BA%E3%80%81%E5%B8%B8%E9%87%8F%E6%B1%A0%E3%80%81%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/">http://blog.hegra.top/2023/05/18/2023-05-18-%E5%A0%86%E3%80%81%E6%A0%88%E3%80%81%E6%96%B9%E6%B3%95%E5%8C%BA%E3%80%81%E5%B8%B8%E9%87%8F%E6%B1%A0%E3%80%81%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.hegra.top" target="_blank">Hegra's world</a>！</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/19/2023-05-19-SQL%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SQL语法基础</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/18/2023-05-18-%E7%9F%A5%E8%AF%86%E7%82%B9/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">知识点</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://edu-727.oss-cn-nanjing.aliyuncs.com/%E7%BB%B4%E5%B0%BC.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Hegra</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hegra-727"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Hegra-727" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:Hegra727@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81Java%E6%A0%88"><span class="toc-number">1.</span> <span class="toc-text">1、Java栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%A0%88%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">1、栈的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%A0%86"><span class="toc-number">2.</span> <span class="toc-text">2、堆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">2.1、特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-number">3.</span> <span class="toc-text">3、常量池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、字符串常量池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2%E3%80%81%E5%8C%85%E8%A3%85%E7%B1%BB%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%B8%B8%E9%87%8F%E6%B1%A0%E6%8A%80%E6%9C%AF"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、包装类实现了常量池技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="toc-number">4.</span> <span class="toc-text">4、方法区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-number">5.</span> <span class="toc-text">5、成员变量和局部变量在内存中的分配</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.hegra.top/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.hegra.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

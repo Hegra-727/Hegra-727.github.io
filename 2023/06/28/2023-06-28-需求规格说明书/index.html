@@ -1,0 +1,1556 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>需求规格说明书 | Hegra's world</title><meta name="author" content="Hegra"><meta name="copyright" content="Hegra"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content=". 电化学分析需求规格说明书1、引言1.1项目名称1.2项目背景1.3项目目标1.4软硬件现状1.5系统总用例图  1.5.2用例说明   用户 描述    工作人员 登录；个人信息管理   研究员 数据分析；数据管理   普通管理员 权限管理   超级管理员 维护与安全   1.6总的功能需求   功能模块 功能点    用户管理 登录管理即所有用户进入系统之前都要进行登录管理验证的功能；信息管">
+<meta property="og:type" content="article">
+<meta property="og:title" content="需求规格说明书">
+<meta property="og:url" content="http://blog.hegra.top/2023/06/28/2023-06-28-%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/index.html">
+<meta property="og:site_name" content="Hegra&#39;s world">
+<meta property="og:description" content=". 电化学分析需求规格说明书1、引言1.1项目名称1.2项目背景1.3项目目标1.4软硬件现状1.5系统总用例图  1.5.2用例说明   用户 描述    工作人员 登录；个人信息管理   研究员 数据分析；数据管理   普通管理员 权限管理   超级管理员 维护与安全   1.6总的功能需求   功能模块 功能点    用户管理 登录管理即所有用户进入系统之前都要进行登录管理验证的功能；信息管">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-06-28T03:12:51.000Z">
+<meta property="article:modified_time" content="2023-07-18T10:43:50.936Z">
+<meta property="article:author" content="Hegra">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.hegra.top/2023/06/28/2023-06-28-%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '需求规格说明书',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-18 18:43:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://edu-727.oss-cn-nanjing.aliyuncs.com/%E7%BB%B4%E5%B0%BC.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hegra's world</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">需求规格说明书</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-28T03:12:51.000Z" title="发表于 2023-06-28 11:12:51">2023-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-18T10:43:50.936Z" title="更新于 2023-07-18 18:43:50">2023-07-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>23分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="需求规格说明书"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>.</p>
+<h1 id="电化学分析需求规格说明书"><a href="#电化学分析需求规格说明书" class="headerlink" title="电化学分析需求规格说明书"></a>电化学分析需求规格说明书</h1><h2 id="1、引言"><a href="#1、引言" class="headerlink" title="1、引言"></a>1、引言</h2><h3 id="1-1项目名称"><a href="#1-1项目名称" class="headerlink" title="1.1项目名称"></a>1.1项目名称</h3><h3 id="1-2项目背景"><a href="#1-2项目背景" class="headerlink" title="1.2项目背景"></a>1.2项目背景</h3><h3 id="1-3项目目标"><a href="#1-3项目目标" class="headerlink" title="1.3项目目标"></a>1.3项目目标</h3><h3 id="1-4软硬件现状"><a href="#1-4软硬件现状" class="headerlink" title="1.4软硬件现状"></a>1.4软硬件现状</h3><h3 id="1-5系统总用例图"><a href="#1-5系统总用例图" class="headerlink" title="1.5系统总用例图"></a>1.5系统总用例图</h3><img src="C:\Users\江文雷\Desktop\暑假任务\总用例图.drawio.png" alt="总用例图.drawio" style="zoom:50%;" />
+
+<h4 id="1-5-2用例说明"><a href="#1-5-2用例说明" class="headerlink" title="1.5.2用例说明"></a>1.5.2用例说明</h4><table>
+<thead>
+<tr>
+<th>用户</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>工作人员</td>
+<td>登录；个人信息管理</td>
+</tr>
+<tr>
+<td>研究员</td>
+<td>数据分析；数据管理</td>
+</tr>
+<tr>
+<td>普通管理员</td>
+<td>权限管理</td>
+</tr>
+<tr>
+<td>超级管理员</td>
+<td>维护与安全</td>
+</tr>
+</tbody></table>
+<h3 id="1-6总的功能需求"><a href="#1-6总的功能需求" class="headerlink" title="1.6总的功能需求"></a>1.6总的功能需求</h3><table>
+<thead>
+<tr>
+<th>功能模块</th>
+<th align="center">功能点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户管理</td>
+<td align="center"><strong>登录管理</strong>即所有用户进入系统之前都要进行登录管理验证的功能；<strong>信息管理</strong>功能包括工作人员对个人可修改信息（见视图表）的查看、修改，管理员对所有人信息的查看、修改、账号状态的设置和权限的分配。</td>
+</tr>
+<tr>
+<td>数据管理</td>
+<td align="center">研究员只能对本账号的数据进行管理，数据管理模块分为<strong>数据管理</strong>、<strong>回收站管理</strong>2个功能。</td>
+</tr>
+<tr>
+<td>数据分析管理</td>
+<td align="center">数据分析模块分为波形参数分析功能，视图可视化。<strong>波形参数分析</strong>模块包括波形处理和波形参数提取两个功能。<strong>视图可视化</strong>包含数据重叠显示、数据删除（视图中），坐标可调，用户可根据需求对图形进行操作。</td>
+</tr>
+<tr>
+<td>维护与安全</td>
+<td align="center"><strong>日志管理</strong>只有超级管理员才拥有权限对日志进行管理。日志包括运行日志和异常操作日志。 能进行日志分析的用户必须拥有超级管理员权限；超级管理员可以导出相应日志导出格式(默认csv格式，可选excel，txt格式)。<strong>数据备份</strong>。<strong>数据还原</strong>只能超级管理员手动对数据进行还原</td>
+</tr>
+<tr>
+<td>通用部分</td>
+<td align="center"><strong>导入导出</strong>，导入导出主要是针对数据管理中的数据、管理员中的用户表、日志的导入导出。<strong>信息查询</strong>，输入关键字模糊查询或者选择查询条件进行查询</td>
+</tr>
+</tbody></table>
+<h2 id="2、用户管理模块"><a href="#2、用户管理模块" class="headerlink" title="2、用户管理模块"></a>2、用户管理模块</h2><h3 id="2-1用户管理用例图-amp-用例说明"><a href="#2-1用户管理用例图-amp-用例说明" class="headerlink" title="2.1用户管理用例图&amp;用例说明"></a>2.1用户管理用例图&amp;用例说明</h3><h4 id="2-1-1登录管理功能"><a href="#2-1-1登录管理功能" class="headerlink" title="2.1.1登录管理功能"></a>2.1.1登录管理功能</h4><p><img src="C:\Users\江文雷\Desktop\暑假任务\登录管理用例.drawio.png" alt="登录管理用例.drawio"></p>
+<table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>用户登录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>用例说明</td>
+<td>用户使用系统第一步</td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>工作人员、研究员、普通管理员、超级管理员（全部参与者统称：用户）</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1. 用户进入登录界面</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>1.  用户登录成功进入各自的模块，使用各自的功能（见权限管理）  2.  用户登录失败，提示邮箱或者密码错误信息</td>
+</tr>
+<tr>
+<td>基本事件流</td>
+<td><strong>用户拥有账号，且知道密码：</strong>  1.用户进入登录页面  2.用户输入邮箱，密码  3.点击登录，系统验证用户是否存在，若存在，检查邮箱和密码是否正确，如果错误则提示密码错误；如果正确则检查用户状态是否正常，如果正常则根据登录的角色进入各自相应的模块，否则提示账户异常；若账户不存在，提示用户不存在；  4.账号或者密码输入错误超过5次则限制账户30min内不允许登录  5. 用户登录操作记录到运行日志中   <strong>用户拥有账号，但忘记了密码：</strong>  1.用户进入登录页面，选择找回密码  2.用户输入邮箱，系统检测邮箱是否存在，如果账户不存在，则提示账户不存在；如果账户存在，则发送验证码到指定邮箱  3.用户输入验证码，系统验证成功后，输入2次密码相同即重置成功，否则提示两次密码不相同，输入的密码至少8位   <strong>用户没有账号：</strong>  1.用户进入登录界面，选择立即注册  2.输入姓名、邮箱、手机号、密码  3.系统判断邮箱是否符合格式，是否为空如果邮箱为空则提示：邮箱不能为空，如果邮箱格式错误则提示：输入正确的邮箱；若全都正确则系统判断邮箱是否被注册，如果邮箱已经被注册了，提示邮箱已被注册  4.邮箱没被注册，系统发送验证码（6位字母数据组合）到邮箱  5.用户输入相应验证码，验证码错误则提示验证码错误，验证码正确则注册成功  7.系统自动给用户分配用户ID(见说明)、分配默认研究员角色、状态为启用状态  8.注册成功   <strong>用户被停用，解冻申请：</strong>  1.用户进入登录页面，选择解冻申请  2.输入邮箱和申请理由  3.系统判断邮箱用户是否存在，如果不存在，返回用户不存在提示信息，如果存在则提交到解冻申请表中等待普通管理员处理</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-2权限管理功能"><a href="#2-1-2权限管理功能" class="headerlink" title="2.1.2权限管理功能"></a>2.1.2权限管理功能</h4><p><img src="C:\Users\江文雷\Desktop\暑假任务\权限管理用例.drawio.png" alt="权限管理用例.drawio"></p>
+<p>用例说明</p>
+<table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>权限管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>1.  普通管理员  2.  超级管理员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1. 用户必须已经登录了系统  2. 用户身份必须是超级管理员和普通管理员（一下统称为管理员）</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>保存修改后用户权限信息</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td><strong>权限管理：</strong> 1. 管理员进入权限管理界面  1. 系统显示角色信息（ID,角色名，描述，用户数，添加时间，角色状态）（见视图表）  2. 可对角色进行操作，权限组对应权限资源路径  3. 如果是增加角色，需要填写角色名称，角色状态和描述，提交成功后返回添加成功信息  4. 如果是修改角色信息，显示原来角色详细信息，修改后输入密码确认修改，返回修改成功信息  5. 如果是删除角色，重复2次提示后验证用户密码后删除角色，并将关联用户的角色修改为默认研究员角色  6. 如果是角色分配，显示所有用户的信息，管理员选择对应的用户分配角色，提交成功后返回分配成功信息  8. 以上所有的操作记录到操作日志中</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-3信息管理功能"><a href="#2-1-3信息管理功能" class="headerlink" title="2.1.3信息管理功能"></a>2.1.3信息管理功能</h4><p><img src="C:\Users\江文雷\Desktop\暑假任务\修改信息用例.drawio.png" alt="修改信息用例.drawio"></p>
+<p>用例说明</p>
+<table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>个人信息管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>1.  超级管理员  2.  普通管理员  3.  生产员  4.  工作人员  （统称为用户）</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td><strong>个人信息维护:</strong>  1.  用户已经成功登录系统  2.  进入个人信息管理模块（个人中心页面）   <strong>解冻审核:</strong>  1. 用户权限必须为普通管理员或者超级管理员  2. 管理员已经登录系统  2. 管理员进入到审核页面   <strong>冻结用户、用户信息维护:</strong>  1. 用户权限必须为普通管理员或者超级管理员  2. 管理员已经登录到系统  3. 管理员进入到用户列表界面</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td><strong>信息查看：</strong>  1. 显示信息（视图表）   <strong>信息修改：</strong>  1. 保存修改后信息   <strong>解冻审核、冻结账户：</strong>  1. 更新修改后账户状态</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td><strong>修改个人信息：</strong>  1.  填写所要修改的个人信息  2.  点击提交修改（无提示错误即可提交）  3.  系统返回修改结果（若修改失败提示修改失败，页面不跳转，  若成功则提示修改成功，页面跳转到个人信息页面）   <strong>修改密码：</strong>  1.  输入原密码和两次新密码（原密码输入错误超过三次，账号自动限制登录5分钟）  2.  获取验证码  3.  填写验证码  4.  点击提交修改  5.  系统返回处理结果（若失败，页面不跳转，提示修改失败，  若成功，页面不跳转， 提示修改成功）   <strong>冻结账户：</strong>  1.  普通管理员选择需要进行冻结的工作人员（可通过关键字（姓名），注册时间查询）  2.  切换用户状态到停用  3.  输入管理员登录密码验证用户  4.  系统返回处理结果（若失败，则显示提交失败，若成功显示提交成功，若账号已经被冻结，应提示该账号已经被冻结）   <strong>解冻账号：</strong>  1.  进入解冻审核页面，点击工作人员姓名，显示详细解封申请（申请人，申请时间，以前角色，申请理由）  2.  普通管理员审核后，点击通过或者拒绝  3.  若为通过，直接点击提交，系统返回处理结果（若失败，页面不跳转，提交操作失败）  4.  若为拒绝，管理员需要填写拒绝理由，点击提交  5.  系统返回处理结果（若失败，则显示操作失败，若成功，则显示操作成功）  6.  不管结果如何，如果是失败，系统则发送审核不通过邮箱给用户，如果成功，系统则发送账号解封成功到相应账户</td>
+</tr>
+</tbody></table>
+<h3 id="2-3活动图"><a href="#2-3活动图" class="headerlink" title="2.3活动图"></a>2.3活动图</h3><h4 id="2-3-1登录管理活动图"><a href="#2-3-1登录管理活动图" class="headerlink" title="2.3.1登录管理活动图"></a>2.3.1登录管理活动图</h4><p><img src="C:\Users\江文雷\Desktop\暑假任务\登录功能.png" alt="登录功能"></p>
+<h4 id="2-3-2权限管理活动图"><a href="#2-3-2权限管理活动图" class="headerlink" title="2.3.2权限管理活动图"></a>2.3.2权限管理活动图</h4><img src="C:\Users\江文雷\Desktop\暑假任务\权限管理.drawio.png" alt="权限管理.drawio" style="zoom:50%;" />
+
+<h4 id="2-3-3信息管理活动图"><a href="#2-3-3信息管理活动图" class="headerlink" title="2.3.3信息管理活动图"></a>2.3.3信息管理活动图</h4><img src="C:\Users\江文雷\Desktop\暑假任务\修改信息.drawio.png" alt="修改信息.drawio" style="zoom:50%;" />
+
+
+
+
+
+
+
+<h3 id="2-4数据视图"><a href="#2-4数据视图" class="headerlink" title="2.4数据视图"></a>2.4数据视图</h3><blockquote>
+<p><strong>2.4.1-2.4.4</strong>:登录管理数据视图（登录、注册、忘密、申请</p>
+<p><strong>2.4.5-2.4.7</strong>:权限管理数据视图（角色、账号、权限</p>
+<p><strong>2.4.8-2.4.9</strong>:信息管理数据视图（用户、审查</p>
+</blockquote>
+<h4 id="2-4-1登录"><a href="#2-4-1登录" class="headerlink" title="2.4.1登录"></a><strong>2.4.1登录</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱</td>
+</tr>
+<tr>
+<td>用户密码</td>
+<td>password</td>
+<td>varchar(32)</td>
+<td>最长32位密码(加密)</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-2新用户注册"><a href="#2-4-2新用户注册" class="headerlink" title="2.4.2新用户注册"></a><strong>2.4.2新用户注册</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>姓名</td>
+<td>name</td>
+<td>varchar(8)</td>
+<td>用户真实姓名</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱</td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>phone</td>
+<td>int(11)</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>验证码</td>
+<td>code</td>
+<td>varchar(6)</td>
+<td>6位随机字母数字验证码</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>password</td>
+<td>varchar(32)</td>
+<td>32位密码(加密)</td>
+</tr>
+<tr>
+<td>确认密码</td>
+<td>comfirm_password</td>
+<td>varchar(32)</td>
+<td>32位密码(加密)</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-3忘记密码视图表"><a href="#2-4-3忘记密码视图表" class="headerlink" title="2.4.3忘记密码视图表"></a><strong>2.4.3忘记密码视图表</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>password</td>
+<td>varchar(32)</td>
+<td>32位密码(加密)</td>
+</tr>
+<tr>
+<td>确认密码</td>
+<td>comfirm_password</td>
+<td>varchar(32)</td>
+<td>32位密码(加密)</td>
+</tr>
+<tr>
+<td>验证码</td>
+<td>code</td>
+<td>int(6)</td>
+<td>6位随机数字字母验证码</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-4解冻申请视图表"><a href="#2-4-4解冻申请视图表" class="headerlink" title="2.4.4解冻申请视图表"></a><strong>2.4.4解冻申请视图表</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱</td>
+</tr>
+<tr>
+<td>申请描述</td>
+<td>application_content</td>
+<td>text</td>
+<td>申请理由</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-5角色列表视图表"><a href="#2-4-5角色列表视图表" class="headerlink" title="2.4.5角色列表视图表"></a><strong>2.4.5角色列表视图表</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>编号</td>
+<td>role_id</td>
+<td>tinyint(2)</td>
+<td>角色的编号</td>
+</tr>
+<tr>
+<td>角色名</td>
+<td>role_name</td>
+<td>varchar(8)</td>
+<td>角色的名称</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>Remark</td>
+<td>text</td>
+<td>角色描述</td>
+</tr>
+<tr>
+<td>用户数</td>
+<td>User_number</td>
+<td>Int(4)</td>
+<td>改角色拥有的用户数</td>
+</tr>
+<tr>
+<td>添加时间</td>
+<td>Add_data</td>
+<td>data</td>
+<td>改角色添加的时间（格式：xxxx年xx月xx日）</td>
+</tr>
+<tr>
+<td>角色状态</td>
+<td>Role_state</td>
+<td>Int(1)</td>
+<td>角色状态页面显示（0代表启用1代表停用）</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-6账号列表"><a href="#2-4-6账号列表" class="headerlink" title="2.4.6账号列表"></a><strong>2.4.6账号列表</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户ID</td>
+<td>user_id</td>
+<td>Varchar(8)</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>user_name</td>
+<td>varchar(8)</td>
+<td>用户的真实姓名</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱（可见，可修改）</td>
+</tr>
+<tr>
+<td>注册时间</td>
+<td>reg_data</td>
+<td>data</td>
+<td>格式：xxxx年xx月xx日（可见，不可修改）</td>
+</tr>
+<tr>
+<td>最后登录时间</td>
+<td>Last_loginData</td>
+<td>data</td>
+<td>格式：xxxx年xx月xx日（可见，不可修改）</td>
+</tr>
+<tr>
+<td>用户状态</td>
+<td>User_state</td>
+<td>Int(1)</td>
+<td>用户状态（0启用1停用）</td>
+</tr>
+<tr>
+<td>用户角色</td>
+<td>role_names</td>
+<td>varchar(6)</td>
+<td>用户角色的名称集合</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-7权限列表"><a href="#2-4-7权限列表" class="headerlink" title="2.4.7权限列表"></a><strong>2.4.7权限列表</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>权限id</td>
+<td>permission_id</td>
+<td>tinyint(2)</td>
+<td>权限的编号</td>
+</tr>
+<tr>
+<td>权限名</td>
+<td>permission _name</td>
+<td>varchar(6)</td>
+<td>权限的名称（特定的：详情见说明）</td>
+</tr>
+<tr>
+<td>权限的描述</td>
+<td>permission _desc</td>
+<td>varchar(12)</td>
+<td>权限的描述</td>
+</tr>
+<tr>
+<td>权限的url</td>
+<td>permission _url</td>
+<td>varchar(64)</td>
+<td>该权限对应的能操作的页面url</td>
+</tr>
+<tr>
+<td>添加时间</td>
+<td>Add_data</td>
+<td>data</td>
+<td>改角色添加的时间（格式：xxxx年xx月xx日）</td>
+</tr>
+<tr>
+<td>权限分类</td>
+<td>permission _type</td>
+<td>Varcher(8)</td>
+<td>权限分类（见说明）</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-8用户视图"><a href="#2-4-8用户视图" class="headerlink" title="2.4.8用户视图"></a><strong>2.4.8用户视图</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户ID</td>
+<td>id</td>
+<td>Int(8)</td>
+<td>用户id(当前年份+编号(当前年份的第几个用户0001)).(可见，不可修改)</td>
+</tr>
+<tr>
+<td>姓名</td>
+<td>name</td>
+<td>varchar(8)</td>
+<td>用户真实姓名(可见，不可修改)</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+<td>varchar(32)</td>
+<td>最大32位长度邮箱（可见，不可修改）</td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>telephone</td>
+<td>Int(11)</td>
+<td>手机号默认11位（可见，不可修改）</td>
+</tr>
+<tr>
+<td>出生日期</td>
+<td>birthday</td>
+<td>varchar(6)</td>
+<td>格式：xxxx年xx月xx日（可见，可修改）</td>
+</tr>
+<tr>
+<td>性别</td>
+<td>sex</td>
+<td>varchar(2)</td>
+<td>男、女（可见，可修改）</td>
+</tr>
+<tr>
+<td>工作单位</td>
+<td>workspace</td>
+<td>Varchar(18)</td>
+<td>工作单位名称（可见，可修改）</td>
+</tr>
+<tr>
+<td>职称</td>
+<td>professional</td>
+<td>Varchar(6)</td>
+<td>职称最高职称（可见，可修改）</td>
+</tr>
+<tr>
+<td>个人描述</td>
+<td>personal_desc</td>
+<td>varchar(80)</td>
+<td>个人描述（可见，可修改）</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>password</td>
+<td>varchar(32)</td>
+<td>32*位密码(加密)(不可见，可修改)</td>
+</tr>
+<tr>
+<td>用户状态</td>
+<td>status</td>
+<td>int(1)</td>
+<td>用户状态(0代表冻结1代表未冻结) （管理员可见，管理员可修改）</td>
+</tr>
+<tr>
+<td>用户角色</td>
+<td>type</td>
+<td>varchar(5)</td>
+<td>用户角色：研究员，普通管理员，超级管理员等（可见，管理员可修改）</td>
+</tr>
+<tr>
+<td>注册方式</td>
+<td>Register_type</td>
+<td>Int(1)</td>
+<td>注册方式（0代表普通方式1代表QQ）（管理员可见，不可修改）</td>
+</tr>
+<tr>
+<td>注册时间</td>
+<td>Regist_date</td>
+<td>date</td>
+<td>注册时间（yy-mm-dd:hh:mm:ss）管理员可见，不可修改）</td>
+</tr>
+<tr>
+<td>最后登录时间</td>
+<td>Last_loginData</td>
+<td>data</td>
+<td>格式：xxxx年xx月xx日（管理员可见，不可修改）</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>Remark</td>
+<td>text</td>
+<td>备注信息（管理员可见，可修改）</td>
+</tr>
+<tr>
+<td>数据总数</td>
+<td>Report_file_number</td>
+<td>Int(4)</td>
+<td>数据数量（可见，不可修改）</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-9解冻审核视图"><a href="#2-4-9解冻审核视图" class="headerlink" title="2.4.9解冻审核视图"></a><strong>2.4.9解冻审核视图</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>申请编号</td>
+<td>id</td>
+<td>int(10)</td>
+<td>用户申请编号</td>
+</tr>
+<tr>
+<td>申请人</td>
+<td>user_id</td>
+<td>int(8)</td>
+<td>申请人ID</td>
+</tr>
+<tr>
+<td>申请理由</td>
+<td>application_content</td>
+<td>text</td>
+<td>申请账号解封理由</td>
+</tr>
+<tr>
+<td>申请时间</td>
+<td>application_time</td>
+<td>datetime</td>
+<td>Yyyy-mm-dd HH:MM:Ss</td>
+</tr>
+<tr>
+<td>申请状态</td>
+<td>status</td>
+<td>tinyint(1)</td>
+<td>拒绝,通过,审核</td>
+</tr>
+<tr>
+<td>审核时间</td>
+<td>check_time</td>
+<td>datetime</td>
+<td>审核时间</td>
+</tr>
+<tr>
+<td>审核批注</td>
+<td>reason</td>
+<td>text</td>
+<td>审核理由</td>
+</tr>
+<tr>
+<td>审核人</td>
+<td>auditor</td>
+<td>varchar(6)</td>
+<td>审核人的名字</td>
+</tr>
+</tbody></table>
+<h2 id="3、数据管理模块"><a href="#3、数据管理模块" class="headerlink" title="3、数据管理模块"></a>3、数据管理模块</h2><h3 id="数据管理用例图"><a href="#数据管理用例图" class="headerlink" title="数据管理用例图"></a>数据管理用例图</h3><h3 id="回收站管理用例图"><a href="#回收站管理用例图" class="headerlink" title="回收站管理用例图"></a>回收站管理用例图</h3><h3 id="用例说明"><a href="#用例说明" class="headerlink" title="用例说明"></a>用例说明</h3><table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>数据管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>参与者</td>
+<td>1.研究员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1、 系统属于已经登录的状态  2、 用户权限为研究员</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>1、更新数据  2、数据管理失败提示失败信息  3、记录操作到数据管理日志中</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td>1、 用户进入数据管理管理界面  2、 系统按时间顺序从最近时间开始排序每页显示6条（用户可选择）   3、 用户对数据进行合适操作（见说明）  4、 保存修改后的数据</td>
+</tr>
+<tr>
+<td>说明</td>
+<td><strong>文件查询:</strong>  1、用户可以在搜索框进行模糊查询   <strong>数据管理失败:</strong>  1、 系统回滚当前操作  2、 系统提示数据管理失败  3、 系统返回数据管理相应界面  <strong>具体操作:</strong>  1、对实验数据可进行操作  a)  查看详情  b)  编辑（备注）  c)  下载  d)  删除  e)  导出  f)  分析  2、对回收站数据可进行操作  a)  彻底删除  b)  还原  系统中产生的数据都是以原始数据为基础，数据列表界面列出的是原始数据，详情页面显示的是根据该原数据处理得来的数据</td>
+</tr>
+</tbody></table>
+<h3 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h3><h3 id="数据视图"><a href="#数据视图" class="headerlink" title="数据视图"></a>数据视图</h3><h4 id="原数据"><a href="#原数据" class="headerlink" title="原数据"></a><strong>原数据</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据Id</td>
+<td>File_id</td>
+<td>Varchar(9)</td>
+<td>数据Id(第一位为P后4位为年月，最后4位为系统自动自增)（可见，不可修改）</td>
+</tr>
+<tr>
+<td>数据名</td>
+<td>file_name</td>
+<td>varchar(11)</td>
+<td>数据名（可见，可修改）</td>
+</tr>
+<tr>
+<td>数据保存时间</td>
+<td>file_data</td>
+<td>data</td>
+<td>数据保存时间  （可见，不可修改）</td>
+</tr>
+<tr>
+<td>数据原件</td>
+<td>File_data</td>
+<td>Varchar(64)</td>
+<td>数据原件url（详情可见，不可修改，科下载）</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>file_remark</td>
+<td>Varchar(80)</td>
+<td>数据备注（可见，可修改）</td>
+</tr>
+<tr>
+<td>上传日期</td>
+<td>date</td>
+<td>Date</td>
+<td>文件上传日期（可见，不可修改）</td>
+</tr>
+<tr>
+<td>数据格式</td>
+<td>File_form</td>
+<td>Varchar(4)</td>
+<td>数据格式：json、xml、txt（可见，不可修改）</td>
+</tr>
+<tr>
+<td>分析方法</td>
+<td>Analysis_method</td>
+<td>Varchar(8)</td>
+<td>分析方法（可见，不可修改）</td>
+</tr>
+<tr>
+<td>电压频率</td>
+<td>U_P</td>
+<td>Double(10)</td>
+<td>电压频率：精确小数点后5位（***可见，不可修改）</td>
+</tr>
+<tr>
+<td>电流频率</td>
+<td>A_P</td>
+<td>Double(10)</td>
+<td>电流频率：精确小数点后5位（***可见，不可修改）</td>
+</tr>
+<tr>
+<td>相位差估计</td>
+<td>Pde</td>
+<td>Double(10)</td>
+<td>相位差估计：精确到小数点后5位（***可见，不可修改）</td>
+</tr>
+<tr>
+<td>Model公式</td>
+<td>Model</td>
+<td>Varchar(32)</td>
+<td>串并连公式（***可见，不可修改）</td>
+</tr>
+<tr>
+<td>CDC模型</td>
+<td>Cdc_model</td>
+<td>Varchar(32)</td>
+<td>CDC可见，不可修改）</td>
+</tr>
+<tr>
+<td>等效电路图</td>
+<td>Electric_url</td>
+<td>Varchar(64)</td>
+<td>等效电路图的url地址（可见，不可修改）</td>
+</tr>
+<tr>
+<td>电路参数</td>
+<td>Electric_data_url</td>
+<td>Varchar(64)</td>
+<td>元件参数的url地址</td>
+</tr>
+</tbody></table>
+<h4 id="回收站数据管理"><a href="#回收站数据管理" class="headerlink" title="回收站数据管理"></a><strong>回收站数据管理</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据Id</td>
+<td>File_id</td>
+<td>Varchar(9)</td>
+<td>数据Id(第一位为P后4位为年月，最后4位为系统自动自增)同删除之前的数据Id一样（可见，不可修改）</td>
+</tr>
+<tr>
+<td>数据名</td>
+<td>file_name</td>
+<td>varchar(11)</td>
+<td>数据名同删除数据名一样（可见，不可修改）</td>
+</tr>
+<tr>
+<td>数据类型</td>
+<td>File_type</td>
+<td>Varchar(8)</td>
+<td>数据类型：实验数据、原数据、实验报告（可见，不可修改）</td>
+</tr>
+<tr>
+<td>删除日期</td>
+<td>date</td>
+<td>Date</td>
+<td>文件删除日期（可见，不可修改）</td>
+</tr>
+<tr>
+<td>最后修改日期</td>
+<td>Last_Edit_date</td>
+<td>Date</td>
+<td>文件最后修改日期（可见，不可修改）</td>
+</tr>
+</tbody></table>
+<h2 id="4、数据分析管理模块"><a href="#4、数据分析管理模块" class="headerlink" title="4、数据分析管理模块"></a>4、数据分析管理模块</h2><h3 id="4-3数据分析活动图"><a href="#4-3数据分析活动图" class="headerlink" title="4.3数据分析活动图"></a>4.3数据分析活动图</h3><img src="C:\Users\江文雷\Desktop\暑假任务\数据分析.drawio.png" alt="数据分析.drawio" style="zoom: 50%;" />
+
+<h3 id="4-4数据视图"><a href="#4-4数据视图" class="headerlink" title="4.4数据视图"></a>4.4数据视图</h3><h4 id="4-4-1数据平滑"><a href="#4-4-1数据平滑" class="headerlink" title="4.4.1数据平滑"></a><strong>4.4.1数据平滑</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>图谱名</td>
+<td>charts_name</td>
+<td>varchar(12)</td>
+<td>图谱名即数据上传时所填名称</td>
+</tr>
+<tr>
+<td>平滑点数</td>
+<td>Point</td>
+<td>Int(2)</td>
+<td>平滑点数选择无平滑、5点平滑、11点平滑、25点平滑、35点平滑</td>
+</tr>
+</tbody></table>
+<h4 id="4-4-2数据滤波"><a href="#4-4-2数据滤波" class="headerlink" title="4.4.2数据滤波"></a><strong>4.4.2数据滤波</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>图谱名</td>
+<td>charts_name</td>
+<td>varchar(12)</td>
+<td>图谱名即数据上传时输入的名称+滤波图谱</td>
+</tr>
+<tr>
+<td>滤波类型</td>
+<td>Type</td>
+<td>Varchar(4)</td>
+<td>滤波处理类型：原始数据、低通滤波、带通滤波</td>
+</tr>
+<tr>
+<td>滤波阶数</td>
+<td>Order_number</td>
+<td>Varchar(4)</td>
+<td>滤波阶数选择：一阶滤波器、二阶滤波器、三阶滤波器</td>
+</tr>
+<tr>
+<td>采样率</td>
+<td>Sampling_rate</td>
+<td>Int(4)</td>
+<td>电话学实验中获得数据设置的采样率</td>
+</tr>
+<tr>
+<td>截止频率</td>
+<td>end _fre</td>
+<td>Int(6)</td>
+<td>电化学实验中获得数据所设置的截止频率的值</td>
+</tr>
+<tr>
+<td>信号频谱图</td>
+<td>charts</td>
+<td>varchar</td>
+<td>包括电流电压频谱图</td>
+</tr>
+<tr>
+<td>原始数据</td>
+<td>data</td>
+<td>varchar</td>
+<td>原始数据</td>
+</tr>
+</tbody></table>
+<h4 id="4-4-3波形参数提取"><a href="#4-4-3波形参数提取" class="headerlink" title="4.4.3波形参数提取"></a><strong>4.4.3波形参数提取</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电流频率估计</td>
+<td>a_hz</td>
+<td>double</td>
+<td>电流频率估计值（精确到小数点后5位）</td>
+</tr>
+<tr>
+<td>电压频率估计</td>
+<td>u_hz</td>
+<td>doubler</td>
+<td>电压频率估计值（精确到小数点后5位）</td>
+</tr>
+<tr>
+<td>相位差估计</td>
+<td>xrda</td>
+<td>double</td>
+<td>相位差估计（精确到小数点后5位）</td>
+</tr>
+</tbody></table>
+<h4 id="4-4-4实验报告"><a href="#4-4-4实验报告" class="headerlink" title="4.4.4实验报告"></a><strong>4.4.4实验报告</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实验报告名</td>
+<td>Name</td>
+<td>Varchar(12)</td>
+<td>实验报告名</td>
+</tr>
+<tr>
+<td>电流频率估计</td>
+<td>a_hz</td>
+<td>double</td>
+<td>电流频率估计值（精确到小数点后5位）</td>
+</tr>
+<tr>
+<td>电压频率估计</td>
+<td>u_hz</td>
+<td>doubler</td>
+<td>电压频率估计值（精确到小数点后5位）</td>
+</tr>
+<tr>
+<td>相位差估计</td>
+<td>xrda</td>
+<td>double</td>
+<td>相位差估计（精确到小数点后5位）</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>Remark</td>
+<td>Varchar(62)</td>
+<td>备注说明最多62个字符</td>
+</tr>
+</tbody></table>
+<h3 id="波线参数分析"><a href="#波线参数分析" class="headerlink" title="波线参数分析"></a>波线参数分析</h3><h3 id="视图可视化"><a href="#视图可视化" class="headerlink" title="视图可视化"></a>视图可视化</h3><h4 id="视图可视化-1"><a href="#视图可视化-1" class="headerlink" title="视图可视化"></a><strong>视图可视化</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>峰电压值</td>
+<td>Ep</td>
+<td>Double</td>
+<td>峰电压值（必填）</td>
+</tr>
+<tr>
+<td>Ap</td>
+<td>Ap</td>
+<td>Double</td>
+<td>Ap=Ep*ip（必填）</td>
+</tr>
+<tr>
+<td>切峰电流值</td>
+<td>Ip</td>
+<td>Double</td>
+<td>切峰电流值（必填）</td>
+</tr>
+<tr>
+<td>电流单位</td>
+<td>Iunit</td>
+<td>String(6)</td>
+<td>电流单位</td>
+</tr>
+</tbody></table>
+<h3 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h3><h4 id="本地导入"><a href="#本地导入" class="headerlink" title="本地导入"></a><strong>本地导入</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据文件</td>
+<td>File_data</td>
+<td>Varchar(64)</td>
+<td>数据原件url（必填）</td>
+</tr>
+<tr>
+<td>数据名</td>
+<td>file_name</td>
+<td>varchar(11)</td>
+<td>数据名（必填）</td>
+</tr>
+<tr>
+<td>数据格式</td>
+<td>file_form</td>
+<td>Varchar(6)</td>
+<td>数据格式：txt、json、xml（必选）</td>
+</tr>
+<tr>
+<td>分割符</td>
+<td>divide</td>
+<td>Varchar(4)</td>
+<td>XY-分割符：逗号、空格、制表符、换行（必选）</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>file_remark</td>
+<td>Varchar(32)</td>
+<td>数据备注最长32个字节数备注可以注释（非必填）</td>
+</tr>
+</tbody></table>
+<h3 id="峰高提取"><a href="#峰高提取" class="headerlink" title="峰高提取"></a>峰高提取</h3><h4 id="峰高提取-1"><a href="#峰高提取-1" class="headerlink" title="峰高提取"></a><strong>峰高提取</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>拟合公式</td>
+<td>Fitting _formula</td>
+<td>Varchar(64)</td>
+<td>数据曲线拟合公式</td>
+</tr>
+<tr>
+<td>峰电流</td>
+<td>ip</td>
+<td>Varchar(32)</td>
+<td>切峰高值</td>
+</tr>
+<tr>
+<td>峰电位</td>
+<td>Ep</td>
+<td>Varchar(32)</td>
+<td>峰电位</td>
+</tr>
+<tr>
+<td>频率范围</td>
+<td>Ap</td>
+<td>Varchar(32)</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="算法插件管理"><a href="#算法插件管理" class="headerlink" title="算法插件管理"></a>算法插件管理</h3><h4 id="算法管理"><a href="#算法管理" class="headerlink" title="算法管理"></a><strong>算法管理</strong></h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字段变量</th>
+<th>变量类型</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算法ID</td>
+<td>algorithm_id</td>
+<td>Varchar(8)</td>
+<td>算法ID</td>
+</tr>
+<tr>
+<td>算法名</td>
+<td>algorithm_name</td>
+<td>Varchar(32)</td>
+<td>算法名</td>
+</tr>
+<tr>
+<td>算法文件保存路径</td>
+<td>algorithm_url</td>
+<td>Varchar(32)</td>
+<td>算法文件保存路径</td>
+</tr>
+</tbody></table>
+<h2 id="5、维护与安全模块"><a href="#5、维护与安全模块" class="headerlink" title="5、维护与安全模块"></a>5、维护与安全模块</h2><h3 id="用例图-amp-用例说明"><a href="#用例图-amp-用例说明" class="headerlink" title="用例图&amp;用例说明"></a>用例图&amp;用例说明</h3><p><img src="C:\Users\江文雷\Desktop\暑假任务\维护与安全用例图.drawio.png" alt="维护与安全用例图.drawio"></p>
+<h4 id="数据备份功能"><a href="#数据备份功能" class="headerlink" title="数据备份功能"></a>数据备份功能</h4><table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>数据备份</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td>UC 4.2</td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>超级管理员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1、 系统属于已经登录的状态  2、 登录的用户的权限是超级管理员  3、 系统管理员再次输入密码正确</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>1、产生被备份数据的数据备份文件</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td><strong>自动备份：</strong>  1、设置自动备份时间，备份数据种类  2、时间条件满足，系统自动备份数据到响应数据库中，否则一直停留在当前直到满足条件执行第3部  3、备份完成，登记日志到操作日志中   <strong>手动备份：</strong>  1、 超级管理员进入数据备份与还原界面  2、 超级管理员选择需要备份的数据的种类  3、 系统开始备份数据   <strong>数据备份失败：</strong>  1、 系统删除之前备份的所有数据  2、 系统提示数据备份失败  3、 系统返回数据备份界面  <strong>数据备份成功：</strong>  1、 系统提示数据备份成功  2、 系统返回数据备份界面</td>
+</tr>
+<tr>
+<td>说明</td>
+<td><strong>数据备份的范围</strong>  1.  实验数据  2.  实验报告  3.  原始数据  4.  系统设置  5.  系统日志  6.  个人信息（用户表）  7.  算法数据  8.  回收站数据  <strong>数据备份失败的情况</strong>  1、 系统出现未知异常导致备份失败  2、 在数据备份的过程中系统管理员选择取消数据备份  <strong>数据备份文件的储存及命名方式</strong>  1、 数据备份文件储存在服务器端  2、 数据备份文件以文件夹的形式来储存  3、 不同的数据库表存放在不同的SQL文件里面  4、 数据备份文件的文件夹存放在一个由程序的配置文件决定的路径的文件夹里  5、 数据备份文件夹里面的文件命名方式为：数据库表的表名.sql  6、 存放数据备份文件的文件夹命名方式为：系统管理员的用户ID-开始缓存的时间（年月日时分秒）   <strong>在手动备份中同一时间只允许一个超级管理员执行数据备份操作</strong>，多个系统管理员同时执行数据备份操作时除第一个操作的系统管理员外其他系统管理员都显示操作失败&lt;系统正在数据备份中&gt;   <strong>数据备份成功后</strong>会删除同类型数据</td>
+</tr>
+</tbody></table>
+<h4 id="数据还原功能"><a href="#数据还原功能" class="headerlink" title="数据还原功能"></a>数据还原功能</h4><table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>数据还原</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>超级管理员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1、系统属于已经登录的状态  2、登录的用户的权限是超级管理员  3、系统管理员再次输入密码正确  4、系统拥有数据备份成功之后的数据备份文件</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>1、系统里面的数据恢复为数据备份文件里面的数据</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td>1、系统管理员进入数据还原界面  2、选择之前备份好的数据备份文件  3、数据开始还原  Ø 数据还原成功  1、系统提示数据还原成功  2、系统返回数据还原界面  Ø 数据还原失败  1、系统将本次数据还原过程中还原的数据恢复为原样  2、系统提示数据还原失败  3、系统返回数据还原界面</td>
+</tr>
+<tr>
+<td>说明</td>
+<td><strong>数据还原失败：</strong>  1、超级管理员在还原过程中主动选择了的取消数据还原  2、数据备份文件破损  3、程序出现未知异常  <strong>同一时间只允许一个超级管理员执行数据还原操作：</strong>，多个超级管理员同时执行数据还原操作时除第一个操作的超级管理员外其他超级管理员都显示操作失败&lt;系统正在数据还原中&gt;</td>
+</tr>
+</tbody></table>
+<h4 id="日志管理功能"><a href="#日志管理功能" class="headerlink" title="日志管理功能"></a>日志管理功能</h4><table>
+<thead>
+<tr>
+<th>用例名</th>
+<th>日志管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>1、超级管理员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1、系统属于已经登录的状态  2、登录的用户的权限是超级管理员</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>1、系统将储存在服务器端的日志文件以表格的方式展示给超级管理员查看，供管理员分析日志</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td>1、 超级管理员进入日志分析系统  2、 日志分析系统调用数据库中的日志  3、 系统将日志内容以表格的形式展示给超级管理员  4、 超级管理员根据不同的方式（具体方式见说明）将想要查看的日志查询出来</td>
+</tr>
+<tr>
+<td>说明</td>
+<td><strong>所有的日志：</strong>包括：运行日志、 异常日志   <strong>当系统的所有的日志文件的大小过大时：</strong>，系统会自动搜索出半年前的日志，并将搜索出的日志删除   <strong>查询日志的方式：</strong>（不同方式可以同时使用）  1、 运行日志：用户id、时间、响应状态、客户真实IP  2、 异常日志：异常类型、异常时间</td>
+</tr>
+</tbody></table>
+<h3 id="活动图-1"><a href="#活动图-1" class="headerlink" title="活动图"></a>活动图</h3><img src="C:\Users\江文雷\Desktop\暑假任务\日志管理.drawio.png" alt="日志管理.drawio" style="zoom:50%;" />
+
+
+
+<h3 id="数据视图-1"><a href="#数据视图-1" class="headerlink" title="数据视图"></a>数据视图</h3><h4 id="运行日志视图"><a href="#运行日志视图" class="headerlink" title="运行日志视图"></a><strong>运行日志视图</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>时间</td>
+<td>log_time</td>
+<td>datetime</td>
+<td>记录该日志的标准时间</td>
+</tr>
+<tr>
+<td>请求人ID</td>
+<td>user_id</td>
+<td>int(8)</td>
+<td>执行该操作的用户的id</td>
+</tr>
+<tr>
+<td>请求端URI</td>
+<td>http_referer</td>
+<td>text</td>
+<td>访问请求头部中带有的访问请求的来源URI信息。若无来源URI信息，则显示-</td>
+</tr>
+<tr>
+<td>客户真实IP</td>
+<td>real_client_ip</td>
+<td>varchar（15）</td>
+<td>访问的客户端的真实IP。若无法获取到，则显示-</td>
+</tr>
+<tr>
+<td>请求参数</td>
+<td>querystring</td>
+<td>text</td>
+<td>请求的参数</td>
+</tr>
+<tr>
+<td>响应时间</td>
+<td>request_time_msec</td>
+<td>int（5）</td>
+<td>系统响应的时间，单位为毫秒</td>
+</tr>
+<tr>
+<td>操作状态</td>
+<td>status</td>
+<td>varchar（3）</td>
+<td>返回给客户端的HTTP响应状态信息，如：200就是成功</td>
+</tr>
+</tbody></table>
+<h4 id="异常日志视图"><a href="#异常日志视图" class="headerlink" title="异常日志视图"></a><strong>异常日志视图</strong></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>异常时间</td>
+<td>error_time</td>
+<td>datetime</td>
+<td>出现该异常时的标准时间</td>
+</tr>
+<tr>
+<td>异常类型</td>
+<td>erroe_type</td>
+<td>text</td>
+<td>该异常的类型</td>
+</tr>
+<tr>
+<td>出错地点</td>
+<td>error_address</td>
+<td>text</td>
+<td>出现该异常的地点</td>
+</tr>
+<tr>
+<td>错误信息</td>
+<td>error_info</td>
+<td>text</td>
+<td>该异常的异常信息</td>
+</tr>
+</tbody></table>
+<h2 id="6、公共模块"><a href="#6、公共模块" class="headerlink" title="6、公共模块"></a>6、公共模块</h2><h3 id="公共模块用例图-amp-用例说明"><a href="#公共模块用例图-amp-用例说明" class="headerlink" title="公共模块用例图&amp;用例说明"></a>公共模块用例图&amp;用例说明</h3><table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>导入导出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>1.  研究员  2.  普通管理员  3.  超级管理员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td><strong>数据管理部分：</strong>  1.  研究员已经成功登录系统  2.  研究员进入数据管理界面  <strong>用户管理部分：</strong>  1.  管理员已经成功登录系统  2.  用户身份为数据管理员和超级管理员  3.  管理员进入用户管理界面   <strong>日志管理部分：</strong>  1. 超级管理员成功登陆系统  2. 用户权限为超级管理员  3.超级管理员进入日志管理界面</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>每个角色导出选择的相应数据</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td>1.   用户进入相应界面（见前置条件）  2.   选择要导出的数据（可以部分，也可以全部导出）系统将选择的数据导出到本地磁盘（见说明）</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>用例名称</th>
+<th>信息查询</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例编号</td>
+<td></td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>1.  工作人员</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>1. 工作人员成功登录系统</td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td><strong>若信息查询成功：</strong>  1.  系统根据工作人员输入的关键字检索返回正确的查询信息  <strong>信息查询失败：</strong>  1.  在工作人员输入检索关键字的过程中就提示工作人员输入关键字并且验证关键字的正确性    2.  如果输入正确的关键字之后未检索到相关信息就提示工作人员没有检索到</td>
+</tr>
+<tr>
+<td>基本流程及其描述</td>
+<td>1.工作人员根据权限进入相应的界面  2.输入关键字模糊查询或者选择查询条件进行查询(见说明)  3.显示查询信息，如果查询信息不存在给出提示</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.hegra.top/">Hegra</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.hegra.top/2023/06/28/2023-06-28-%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/">http://blog.hegra.top/2023/06/28/2023-06-28-%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.hegra.top" target="_blank">Hegra's world</a>！</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/01/2023-07-01-UML%E5%9B%BE/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">UML图</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/22/2023-06-22-%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%84%E5%88%86/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">记一次处分</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://edu-727.oss-cn-nanjing.aliyuncs.com/%E7%BB%B4%E5%B0%BC.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Hegra</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hegra-727"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Hegra-727" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:Hegra727@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6"><span class="toc-number">1.</span> <span class="toc-text">电化学分析需求规格说明书</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%BC%95%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">1、引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1项目名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2项目背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E9%A1%B9%E7%9B%AE%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3项目目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4%E8%BD%AF%E7%A1%AC%E4%BB%B6%E7%8E%B0%E7%8A%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4软硬件现状</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5系统总用例图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1.5.2用例说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6%E6%80%BB%E7%9A%84%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.6总的功能需求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">2、用户管理模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E7%94%A8%E4%BE%8B%E5%9B%BE-amp-%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1用户管理用例图&amp;用例说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.1.1登录管理功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.1.2权限管理功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">2.1.3信息管理功能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.3活动图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.3.1登录管理活动图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.3.2权限管理活动图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3.3信息管理活动图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.4数据视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1%E7%99%BB%E5%BD%95"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.4.1登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2%E6%96%B0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.4.2新用户注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%E8%A7%86%E5%9B%BE%E8%A1%A8"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.4.3忘记密码视图表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-4%E8%A7%A3%E5%86%BB%E7%94%B3%E8%AF%B7%E8%A7%86%E5%9B%BE%E8%A1%A8"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">2.4.4解冻申请视图表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-5%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8%E8%A7%86%E5%9B%BE%E8%A1%A8"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">2.4.5角色列表视图表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-6%E8%B4%A6%E5%8F%B7%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">2.4.6账号列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-7%E6%9D%83%E9%99%90%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">2.4.7权限列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-8%E7%94%A8%E6%88%B7%E8%A7%86%E5%9B%BE"><span class="toc-number">1.2.3.8.</span> <span class="toc-text">2.4.8用户视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-9%E8%A7%A3%E5%86%BB%E5%AE%A1%E6%A0%B8%E8%A7%86%E5%9B%BE"><span class="toc-number">1.2.3.9.</span> <span class="toc-text">2.4.9解冻审核视图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97"><span class="toc-number">1.3.</span> <span class="toc-text">3、数据管理模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="toc-number">1.3.1.</span> <span class="toc-text">数据管理用例图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%94%B6%E7%AB%99%E7%AE%A1%E7%90%86%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">回收站管理用例图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.3.3.</span> <span class="toc-text">用例说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.3.4.</span> <span class="toc-text">活动图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE"><span class="toc-number">1.3.5.</span> <span class="toc-text">数据视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">原数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E6%94%B6%E7%AB%99%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">回收站数据管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97"><span class="toc-number">1.4.</span> <span class="toc-text">4、数据分析管理模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.3数据分析活动图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.4数据视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-1%E6%95%B0%E6%8D%AE%E5%B9%B3%E6%BB%91"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">4.4.1数据平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-2%E6%95%B0%E6%8D%AE%E6%BB%A4%E6%B3%A2"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">4.4.2数据滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-3%E6%B3%A2%E5%BD%A2%E5%8F%82%E6%95%B0%E6%8F%90%E5%8F%96"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">4.4.3波形参数提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-4%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">4.4.4实验报告</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E7%BA%BF%E5%8F%82%E6%95%B0%E5%88%86%E6%9E%90"><span class="toc-number">1.4.3.</span> <span class="toc-text">波线参数分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">1.4.4.</span> <span class="toc-text">视图可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96-1"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">视图可视化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5"><span class="toc-number">1.4.5.</span> <span class="toc-text">数据导入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AF%BC%E5%85%A5"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">本地导入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E9%AB%98%E6%8F%90%E5%8F%96"><span class="toc-number">1.4.6.</span> <span class="toc-text">峰高提取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B3%B0%E9%AB%98%E6%8F%90%E5%8F%96-1"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">峰高提取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.7.</span> <span class="toc-text">算法插件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.7.1.</span> <span class="toc-text">算法管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E7%BB%B4%E6%8A%A4%E4%B8%8E%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97"><span class="toc-number">1.5.</span> <span class="toc-text">5、维护与安全模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E5%9B%BE-amp-%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.5.1.</span> <span class="toc-text">用例图&amp;用例说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%8A%9F%E8%83%BD"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">数据备份功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%98%E5%8E%9F%E5%8A%9F%E8%83%BD"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">数据还原功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">日志管理功能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E5%9B%BE-1"><span class="toc-number">1.5.2.</span> <span class="toc-text">活动图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE-1"><span class="toc-number">1.5.3.</span> <span class="toc-text">数据视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E8%A7%86%E5%9B%BE"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">运行日志视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E6%97%A5%E5%BF%97%E8%A7%86%E5%9B%BE"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">异常日志视图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97"><span class="toc-number">1.6.</span> <span class="toc-text">6、公共模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97%E7%94%A8%E4%BE%8B%E5%9B%BE-amp-%E7%94%A8%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.6.1.</span> <span class="toc-text">公共模块用例图&amp;用例说明</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.hegra.top/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.hegra.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
